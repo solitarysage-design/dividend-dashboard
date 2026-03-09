@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dividend-toolkit Dashboard - 2026-03-09 08:19</title>
+<title>dividend-toolkit Dashboard - 2026-03-09 09:39</title>
 <style>
 :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
         --text2: #94a3b8; --accent: #38bdf8; --green: #22c55e; --yellow: #eab308;
@@ -89,7 +89,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <body>
 <div class="container">
 <h1>dividend-toolkit Dashboard</h1>
-<div class="subtitle">2026-03-09 08:19 時点</div>
+<div class="subtitle">2026-03-09 09:39 時点</div>
 <div class="tab-nav">
 <button class="tab-btn active" data-tab="tab-guard" onclick="switchTab('tab-guard')">ガード <span class="tab-count">4</span></button>
 <button class="tab-btn" data-tab="tab-audit" onclick="switchTab('tab-audit')">監査 <span class="tab-count">21</span></button>
@@ -110,15 +110,17 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div class="card"><div class="label">PF利回り</div><div class="value">3.03%</div><div class="sub">取得: 3.65%</div></div>
 <div class="card"><div class="label">年間配当</div><div class="value">&yen;659,356</div><div class="sub">月額 &yen;54,946</div></div>
 <div class="card"><div class="label">銘柄数</div><div class="value">21</div></div>
-<div class="card"><div class="label"><span class="tip" data-tip="max(取得原価基準DD, ストレスDD)&#10;含み益でも集中リスクが高ければ警告">DD(総合)</span></div><div class="value">10.0%</div><div class="sub">含み益状態 (ストレスリスクのみ)</div></div>
+<div class="card"><div class="label">含み損益率</div><div class="value pos">+20.4%</div><div class="sub">含み益状態</div></div>
+<div class="card"><div class="label"><span class="tip" data-tip="集中シナリオ(上位3銘柄/景気敏感/金融/ALERT・FAIL/危険フラグ)の最悪値。&#10;PF全体シナリオは含まない。">集中リスクDD</span></div><div class="value neg">8.6%</div><div class="sub">危険フラグ銘柄-20%</div></div>
+<div class="card"><div class="label"><span class="tip" data-tip="管理DD = max(実績DD, 集中リスクDD)。&#10;DDルール (6%注意/8%修正/10%強制) はこの値で判定。&#10;PF全体シナリオは市場リスクのため管理DD対象外。">管理DD</span></div><div class="value neg">8.6%</div><div class="sub">修正必要</div></div>
+<div class="card"><div class="label"><span class="tip" data-tip="PF全体が一律下落するシナリオ。&#10;分散では回避できない市場リスク。&#10;管理DDには加算しない (参考値)。">市場リスク(参考)</span></div><div class="value">10.0%</div><div class="sub">PF全体下落時</div></div>
 </div>
-<div class="action-box action-fail"><strong>DDアクション: 強制見直し</strong> — ポジション縮小を即実行。ALERT/FAIL銘柄を優先的に売却検討。
+<div class="action-box action-alert"><strong>DDアクション: 修正必要</strong> — 管理DD 8.6% — 集中リスク 8.6% (危険フラグ銘柄-20%)。リバランス計画を1週間以内に策定。
 <ul style="margin:6px 0 0 16px;font-size:12px;list-style:disc">
-<li>新規買い: 全面停止</li>
-<li>ALERT/FAIL銘柄・danger_flags銘柄を優先的に売却</li>
-<li>集中ポジション (単一&gt;10%) を即リバランス</li>
-<li>景気敏感・金融セクターの比率を見直し</li>
-<li>ルールベースで縮小・撤退候補を選定</li>
+<li>新規買い: 原則停止 (例外: PASS銘柄のゾーン③到達時のみ)</li>
+<li>集中是正: 上位3銘柄の比率低減を検討</li>
+<li>景気敏感・監査弱い銘柄の比率を見直し</li>
+<li>1週間以内にリバランス計画を策定</li>
 </ul>
 </div>
 <div style="margin:12px 0;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px"><h3 style="margin:0 0 8px;font-size:14px">ポートフォリオ実行判断</h3>
@@ -128,8 +130,8 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin-top:4px;font-size:12px"><strong>縮小検討:</strong> 1928, 5161, 1942, 1950, 2768</div>
 </div>
 <h3>アラート</h3>
-<div class="alert-box"><div class="title">[FAIL] ドローダウン</div><div class="msg">DD 10.0% &gt;= 10.0% — 強制見直し水準(取得原価基準: 0.0%, ストレス(from_current): 10.0% [PF全体-10%])</div></div>
-<div class="alert-box"><div class="title">[ALERT] ストレスDD</div><div class="msg">ストレスDD: 「PF全体-10%」で現在値から 10.0% 下落</div></div>
+<div class="alert-box"><div class="title">[ALERT] ドローダウン</div><div class="msg">管理DD 8.6% &gt;= 8.0% — 修正必要水準 (集中リスク: 危険フラグ銘柄-20% 8.6%)</div></div>
+<div class="alert-box"><div class="title">[ALERT] 集中リスクDD</div><div class="msg">集中リスク: 「危険フラグ銘柄-20%」で現在値から 8.6% 下落</div></div>
 <div class="alert-box"><div class="title">[ALERT] 監査品質 (危険フラグ時価比率)</div><div class="msg">danger_flags銘柄が時価の 42.9% — 危険銘柄への時価集中</div></div>
 <div class="alert-box"><div class="title">[ALERT] 監査品質 (危険フラグ配当寄与)</div><div class="msg">danger_flags銘柄の配当寄与 41.2% — 配当収入が危険銘柄に依存</div></div>
 <div class="alert-box" style="border-color:#f9731666;background:#f9731611"><div class="title" style="color:var(--orange)">配当リスク</div><div class="msg">ALERT/FAIL・危険フラグ銘柄の年間配当: &yen;271,500 (全体の 41.2%)</div></div>
@@ -152,31 +154,31 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <h3>個別銘柄ドローダウン (含み損-10%超)</h3>
 <div class="alert-box"><div class="title">7867 タカラトミー: -35.5%</div><div class="msg">含み損益 &yen;-306,600 / 取得 &yen;4,317 → 現在 &yen;2,784</div></div>
 <h3>ストレステスト</h3>
-<div style="font-size:11px;color:var(--text2);margin-bottom:8px">シナリオ別の想定損失。原価基準DD=取得原価からの下落率, 現在値下落率=現在時価からの下落率。</div>
-<table><thead><tr><th>シナリオ</th><th class="right"><span class="tip" data-tip="ストレス後の時価 vs 取得原価">原価基準DD</span></th><th class="right"><span class="tip" data-tip="現在時価からの下落率">現在値下落率</span></th><th class="right">想定損失額</th><th>詳細</th></tr></thead><tbody>
-<tr><td>上位3銘柄-10%</td><td class="right">0.0%</td><td class="right ">3.0%</td><td class="right neg">&yen;646,310</td><td>上位3銘柄(1942, 1950, 8766)が同時に10%下落</td></tr>
-<tr><td>景気敏感-15%</td><td class="right">0.0%</td><td class="right warn">6.2%</td><td class="right neg">&yen;1,347,300</td><td>景気敏感セクター(6銘柄)が15%下落</td></tr>
-<tr><td>金融-15%</td><td class="right">0.0%</td><td class="right ">4.6%</td><td class="right neg">&yen;991,380</td><td>金融セクター(6銘柄)が15%下落</td></tr>
-<tr><td>ALERT/FAIL銘柄-20%</td><td class="right">0.0%</td><td class="right ">1.4%</td><td class="right neg">&yen;297,680</td><td>ALERT/FAIL銘柄(2銘柄)が20%下落</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td class="right">0.0%</td><td class="right neg">8.6%</td><td class="right neg">&yen;1,866,260</td><td>danger_flags銘柄(9銘柄)が20%下落</td></tr>
-<tr><td>PF全体-10%</td><td class="right">0.0%</td><td class="right neg">10.0%</td><td class="right neg">&yen;2,175,100</td><td>ポートフォリオ全体が10%下落 (市場全体の調整)</td></tr>
+<div style="font-size:11px;color:var(--text2);margin-bottom:8px">シナリオ別の想定損失。ストレス後含み損益率=ストレス後の時価 vs 取得原価, 現在値下落率=現在時価からの下落率。★=集中リスクシナリオ (管理DD計算対象), ☆=市場リスク (参考値)。</div>
+<table><thead><tr><th></th><th>シナリオ</th><th class="right"><span class="tip" data-tip="現在時価からの下落率">下落率</span></th><th class="right"><span class="tip" data-tip="ストレス後の (時価 - 取得原価) / 取得原価&#10;マイナス=含み損, プラス=含み益残存">ストレス後損益率</span></th><th class="right">想定損失額</th><th class="right">ストレス後時価</th><th>詳細</th></tr></thead><tbody>
+<tr><td class="center">★</td><td>上位3銘柄-10%</td><td class="right ">3.0%</td><td class="right pos">+16.8%</td><td class="right neg">&yen;646,310</td><td class="right">&yen;21,104,690</td><td>上位3銘柄(1942, 1950, 8766)が同時に10%下落</td></tr>
+<tr><td class="center">★</td><td>景気敏感-15%</td><td class="right warn">6.2%</td><td class="right pos">+12.9%</td><td class="right neg">&yen;1,347,300</td><td class="right">&yen;20,403,700</td><td>景気敏感セクター(6銘柄)が15%下落</td></tr>
+<tr><td class="center">★</td><td>金融-15%</td><td class="right ">4.6%</td><td class="right pos">+14.9%</td><td class="right neg">&yen;991,380</td><td class="right">&yen;20,759,620</td><td>金融セクター(6銘柄)が15%下落</td></tr>
+<tr><td class="center">★</td><td>ALERT/FAIL銘柄-20%</td><td class="right ">1.4%</td><td class="right pos">+18.7%</td><td class="right neg">&yen;297,680</td><td class="right">&yen;21,453,320</td><td>ALERT/FAIL銘柄(2銘柄)が20%下落</td></tr>
+<tr><td class="center">★</td><td>危険フラグ銘柄-20%</td><td class="right neg">8.6%</td><td class="right pos">+10.0%</td><td class="right neg">&yen;1,866,260</td><td class="right">&yen;19,884,740</td><td>danger_flags銘柄(9銘柄)が20%下落</td></tr>
+<tr><td class="center">☆</td><td>PF全体-10%</td><td class="right neg">10.0%</td><td class="right pos">+8.3%</td><td class="right neg">&yen;2,175,100</td><td class="right">&yen;19,575,900</td><td>ポートフォリオ全体が10%下落 (市場全体の調整)</td></tr>
 </tbody></table>
 <h3>ストレス寄与 (セクター別)</h3>
 <table><thead><tr><th>シナリオ</th><th>セクター</th><th class="right">想定損失</th><th class="right">寄与率</th></tr></thead><tbody>
 <tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;54,966</td><td class="right">0.2%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>建設</td><td class="right neg">&yen;136,988</td><td class="right">0.6%</td></tr>
 <tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;47,329</td><td class="right">0.2%</td></tr>
-<tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;456,166</td><td class="right">2.1%</td></tr>
 <tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;52,491</td><td class="right">0.2%</td></tr>
-<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;140,781</td><td class="right">0.7%</td></tr>
-<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,729</td><td class="right">0.1%</td></tr>
+<tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;456,166</td><td class="right">2.1%</td></tr>
 <tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;102,445</td><td class="right">0.5%</td></tr>
+<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;140,781</td><td class="right">0.7%</td></tr>
 <tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;33,425</td><td class="right">0.1%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,864</td><td class="right">0.2%</td></tr>
+<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,729</td><td class="right">0.1%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>商社</td><td class="right neg">&yen;54,200</td><td class="right">0.2%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>食品</td><td class="right neg">&yen;24,865</td><td class="right">0.1%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,864</td><td class="right">0.2%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;72,758</td><td class="right">0.3%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;62,462</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;62,891</td><td class="right">0.3%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;487,584</td><td class="right">2.2%</td></tr>
 </tbody></table>
 <h3>銘柄別詳細</h3>
@@ -968,16 +970,15 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div class="tab-panel" id="tab-action"><h2>実行アクションカード</h2>
 <div class="section">
 <h3 style="margin-top:0">ポートフォリオ全体: 今やること</h3>
-<div class="action-box action-fail"><strong>新規買い: 停止</strong> — DD段階「強制見直し」により制限中</div>
-<div style="margin:8px 0"><strong>DD対応アクション:</strong></div>
+<div class="action-box action-fail"><strong>新規買い: 停止</strong> — 管理DD 8.6% (修正必要) / アラート 4件</div>
+<div style="margin:8px 0"><strong>DD対応アクション (修正必要):</strong></div>
 <ul style="margin:4px 0 8px 16px;font-size:13px;list-style:disc">
-<li>新規買い: 全面停止</li>
-<li>ALERT/FAIL銘柄・danger_flags銘柄を優先的に売却</li>
-<li>集中ポジション (単一&gt;10%) を即リバランス</li>
-<li>景気敏感・金融セクターの比率を見直し</li>
-<li>ルールベースで縮小・撤退候補を選定</li>
+<li>新規買い: 原則停止 (例外: PASS銘柄のゾーン③到達時のみ)</li>
+<li>集中是正: 上位3銘柄の比率低減を検討</li>
+<li>景気敏感・監査弱い銘柄の比率を見直し</li>
+<li>1週間以内にリバランス計画を策定</li>
 </ul>
-<div style="margin:6px 0;font-size:13px"><strong style="color:var(--green)">買い優先候補:</strong> 3946, 4206, 7453, 7867, 8098</div>
+<div style="margin:6px 0;font-size:13px"><strong style="color:var(--yellow)">監査優良 (DD改善後に買い候補):</strong> 3946(価格待ち)</div>
 <div style="margin:4px 0;font-size:13px"><strong style="color:var(--orange)">監査要確認:</strong> 1414, 1605, 1942, 1950, 2768</div>
 <div style="margin:4px 0;font-size:13px"><strong style="color:var(--red)">縮小検討:</strong> 1928, 5161, 1942, 1950, 2768</div>
 </div>
