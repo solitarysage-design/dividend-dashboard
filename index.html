@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dividend-toolkit Dashboard - 2026-03-09 13:29</title>
+<title>dividend-toolkit Dashboard - 2026-03-09 15:04</title>
 <style>
 :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
         --text2: #94a3b8; --accent: #38bdf8; --green: #22c55e; --yellow: #eab308;
@@ -60,6 +60,53 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 .val-bar .bar-marker { width:10px; height:10px; border-radius:50%; position:absolute; top:-2px;
                         border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3); }
 
+/* ── Weekly Playbook ── */
+.playbook-brief { background:var(--card); border:1px solid var(--border); border-radius:8px;
+                   padding:16px; margin:12px 0; }
+.playbook-brief .pb-title { font-size:14px; font-weight:700; margin-bottom:10px; display:flex;
+                             align-items:center; gap:8px; }
+.playbook-brief .pb-phase { font-size:12px; padding:2px 10px; border-radius:4px; font-weight:700; }
+.playbook-brief .pb-item { display:flex; align-items:center; gap:8px; padding:5px 0;
+                            font-size:13px; border-bottom:1px solid var(--border); }
+.playbook-brief .pb-item:last-child { border-bottom:none; }
+.playbook-brief .pb-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.playbook-brief .pb-num { color:var(--text2); font-size:11px; min-width:16px; }
+.playbook-brief .pb-label { flex:1; }
+.playbook-brief .pb-value { font-size:11px; color:var(--text2); white-space:nowrap; }
+.playbook-brief .pb-note { font-size:11px; color:var(--text2); margin-top:8px; padding-top:8px;
+                            border-top:1px solid var(--border); }
+.playbook-detail { margin-bottom:16px; }
+.playbook-detail details { background:var(--card); border:1px solid var(--border); border-radius:8px;
+                            margin-bottom:6px; overflow:hidden; }
+.playbook-detail summary { padding:10px 14px; cursor:pointer; font-size:13px; font-weight:600;
+                            display:flex; align-items:center; gap:8px; user-select:none;
+                            list-style:none; }
+.playbook-detail summary::-webkit-details-marker { display:none; }
+.playbook-detail summary::before { content:'▶'; font-size:10px; color:var(--text2); transition:transform 0.2s; }
+.playbook-detail details[open] summary::before { transform:rotate(90deg); }
+.playbook-detail summary:hover { background:rgba(56,189,248,0.05); }
+.playbook-detail details[open] summary { border-bottom:1px solid var(--border); }
+.playbook-detail .step-content { padding:12px 16px; font-size:13px; line-height:1.7; }
+.playbook-detail .step-content ul { margin:4px 0 8px 16px; list-style:disc; }
+.playbook-detail .step-content li { margin:2px 0; }
+.playbook-detail .step-num { display:inline-flex; align-items:center; justify-content:center;
+                              width:22px; height:22px; border-radius:50%; background:var(--accent);
+                              color:var(--bg); font-size:11px; font-weight:700; flex-shrink:0; }
+.playbook-detail .step-num.done { background:var(--green); }
+.playbook-check { width:15px; height:15px; accent-color:var(--green); cursor:pointer; flex-shrink:0;
+                   margin-left:auto; }
+.playbook-status { font-size:11px; padding:1px 8px; border-radius:4px; white-space:nowrap; }
+.playbook-status.s-safe { background:#22c55e22; color:var(--green); }
+.playbook-status.s-warn { background:#eab30822; color:var(--yellow); }
+.playbook-status.s-alert { background:#ef444422; color:var(--red); }
+.playbook-memo { width:100%; min-height:70px; background:var(--bg); color:var(--text);
+                  border:1px solid var(--border); border-radius:6px; padding:10px; font-size:13px;
+                  font-family:inherit; resize:vertical; margin-top:6px; }
+.playbook-memo:focus { outline:none; border-color:var(--accent); }
+.playbook-copy-btn { background:var(--border); color:var(--text); border:none; border-radius:4px;
+                      padding:4px 12px; font-size:11px; cursor:pointer; margin-top:8px; }
+.playbook-copy-btn:hover { background:var(--accent); color:var(--bg); }
+
 /* ── Responsive ── */
 @media (max-width:768px) {
     body { padding:8px; font-size:12px; }
@@ -89,7 +136,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <body>
 <div class="container">
 <h1>dividend-toolkit Dashboard</h1>
-<div class="subtitle">2026-03-09 13:29 時点</div>
+<div class="subtitle">2026-03-09 15:04 時点</div>
 <div class="tab-nav">
 <button class="tab-btn active" data-tab="tab-guard" onclick="switchTab('tab-guard')">ガード <span class="tab-count">4</span></button>
 <button class="tab-btn" data-tab="tab-audit" onclick="switchTab('tab-audit')">監査 <span class="tab-count">21</span></button>
@@ -122,7 +169,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr style="border-top:1px solid var(--border)"><td style="padding:2px 8px;font-weight:700">→ 管理DD</td><td style="padding:2px 8px;font-weight:700" class="right neg">8.6%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">= max(実績, 集中リスク)</td></tr>
 <tr><td style="padding:2px 8px;color:var(--text2)">市場リスク (参考)</td><td style="padding:2px 8px" class="right">10.0%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">管理DD対象外</td></tr>
 </tbody></table>
-<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: 建設 &yen;487,584, その他金融 &yen;62,462, 証券 &yen;62,891</div>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: 証券 &yen;62,891, ゴム &yen;35,864, その他金融 &yen;62,462</div>
 <div style="font-size:11px;color:var(--text2)">補助要因: 景気敏感-15% 6.2%</div>
 <div style="font-size:11px;color:var(--text2);margin-top:4px">DDルール閾値: DD6=注意 / DD8=是正 / DD10=強制</div>
 <ul style="margin:6px 0 0 16px;font-size:12px;list-style:disc">
@@ -135,6 +182,15 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:12px 0;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px"><h3 style="margin:0 0 8px;font-size:14px">ポートフォリオ実行判断</h3>
 <div style="color:var(--red);font-weight:700;font-size:14px">新規買い: 停止中</div><div style="font-size:12px;color:var(--text2);margin-top:2px">DD段階またはリスク状況により新規購入を制限中</div>
 <div style="margin-top:6px;font-size:12px;color:var(--text2)">検討候補 1件 / 監査要確認 5件 / 縮小検討 9件 — 詳細はアクションタブ参照</div>
+</div>
+<div class="playbook-brief" id="playbook-brief">
+<div class="pb-title"><span style="color:var(--accent)">今週の運用手順</span><span class="pb-phase" style="background:#f9731633;color:var(--orange)">DD8 是正</span><span class="playbook-status s-alert">買い停止</span></div>
+<div class="pb-item"><span class="pb-dot" style="background:var(--red)"></span><span class="pb-num">1.</span><span class="pb-label">管理DD確認 — DD8 是正</span><span class="pb-value">8.6%</span></div>
+<div class="pb-item"><span class="pb-dot" style="background:var(--red)"></span><span class="pb-num">2.</span><span class="pb-label">縮小検討銘柄をレビュー</span><span class="pb-value">9件</span></div>
+<div class="pb-item"><span class="pb-dot" style="background:var(--red)"></span><span class="pb-num">3.</span><span class="pb-label">監査要確認・danger_flags を再点検</span><span class="pb-value">5件</span></div>
+<div class="pb-item"><span class="pb-dot" style="background:var(--green)"></span><span class="pb-num">4.</span><span class="pb-label">集中度チェック (Top3 30%, 建設 34%)</span></div>
+<div class="pb-item"><span class="pb-dot" style="background:var(--red)"></span><span class="pb-num">5.</span><span class="pb-label">新規買いは停止中 — 候補はDD改善後に再評価</span><span class="pb-value">1件</span></div>
+<div class="pb-note">danger_flags時価 42.9% / 配当寄与 41.2% — 詳細はアクションタブ「週次運用手順」参照</div>
 </div>
 <h3>アラート</h3>
 <div class="alert-box"><div class="title">[ALERT] ドローダウン</div><div class="msg">管理DD 8.6% &gt;= 8.0% — DD8 是正 (集中リスク: 危険フラグ銘柄-20% 8.6%)</div></div>
@@ -174,17 +230,17 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <table><thead><tr><th>シナリオ</th><th>セクター</th><th class="right">想定損失</th><th class="right">寄与率</th></tr></thead><tbody>
 <tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;54,966</td><td class="right">0.2%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>建設</td><td class="right neg">&yen;136,988</td><td class="right">0.6%</td></tr>
-<tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;456,166</td><td class="right">2.1%</td></tr>
 <tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;52,491</td><td class="right">0.2%</td></tr>
+<tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;456,166</td><td class="right">2.1%</td></tr>
 <tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;47,329</td><td class="right">0.2%</td></tr>
-<tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;102,445</td><td class="right">0.5%</td></tr>
 <tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,729</td><td class="right">0.1%</td></tr>
-<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;140,781</td><td class="right">0.7%</td></tr>
+<tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;102,445</td><td class="right">0.5%</td></tr>
 <tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;33,425</td><td class="right">0.1%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;487,584</td><td class="right">2.2%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;62,462</td><td class="right">0.3%</td></tr>
+<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;140,781</td><td class="right">0.7%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;62,891</td><td class="right">0.3%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,864</td><td class="right">0.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;62,462</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;487,584</td><td class="right">2.2%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>食品</td><td class="right neg">&yen;24,865</td><td class="right">0.1%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>商社</td><td class="right neg">&yen;54,200</td><td class="right">0.2%</td></tr>
 </tbody></table>
@@ -281,7 +337,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF/純利益 = 0.29 — 一過性利益疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加, FCF黒字転換</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 5161 西川ゴム工業</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS悪化中にDPS増加 — 配当性向悪化懸念</div>
@@ -289,7 +345,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> 配当性向 102.1% は危険水準 (&gt;=90.0%)</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS前年比 -21.6%</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPSが悪化しているにもかかわらずDPSが増加 — 持続性に疑問</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 増益転換, 配当性向が70.0%未満に改善, EPS回復</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: EPS回復, 増益転換, 配当性向が70.0%未満に改善</div>
 </div></div>
 <div class="tab-panel" id="tab-zone"><h2>買いゾーン判定 (buy_zone_engine)</h2>
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>判定凡例:</strong> <span style="color:#22c55e">BUY_NOW</span>=即時買い推奨 / <span style="color:#86efac">BUY_SMALL</span>=小ロットで打診買い / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=株価がゾーン上限以下 (価格条件の達成であり実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格到達 + 判定BUY + 監査OK + DD余裕 すべて充足</div>
@@ -976,6 +1032,56 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 </tbody></table></div>
 <div class="tab-panel" id="tab-action"><h2>実行アクションカード</h2>
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>用語:</strong> <span style="color:#22c55e">BUY_NOW/BUY_SMALL</span>=購入推奨判定 / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=ゾーン価格条件の達成 (実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格+監査+DD全て充足 &nbsp;|&nbsp; <strong>次回検討候補</strong>=監査PASSだが価格/DD等の条件待ち</div>
+<div class="playbook-detail">
+<h2 style="display:flex;align-items:center;gap:10px">週次運用手順<span class="pb-phase" style="background:#f9731633;color:var(--orange);font-size:13px">DD8 是正</span></h2>
+<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-09 15:04)</div>
+<details open>
+<summary><span class="step-num">1</span>DD状況確認<span class="playbook-status s-alert">8.6%</span><input type="checkbox" class="playbook-check" data-step="1"></summary>
+<div class="step-content">
+<strong>管理DD 8.6% — DD8 是正</strong>
+<br>主因シナリオ: 危険フラグ銘柄-20% (8.6%)
+<ul>
+<li style="color:var(--orange);font-weight:700">DD8是正 — 新規買い原則停止。1週間以内にリバランス計画を策定。</li>
+<li>まず「買う」より先に「減らす/見直す」を優先</li>
+</ul></div></details>
+<details>
+<summary><span class="step-num">2</span>監査リスク確認<span class="playbook-status s-alert">要確認 5件</span><input type="checkbox" class="playbook-check" data-step="2"></summary>
+<div class="step-content">
+danger_flags時価比率: <strong>42.9%</strong> / 配当寄与: <strong>41.2%</strong>
+<br>監査要確認: <strong>1414, 1605, 1942, 1950, 2768</strong>
+<br>アラート: 4件
+<ul>
+<li>監査が悪化した銘柄を優先再点検</li>
+<li>高利回りでも danger_flags なら放置しない</li>
+</ul></div></details>
+<details>
+<summary><span class="step-num">3</span>集中度確認<span class="playbook-status s-safe">Top3 30%</span><input type="checkbox" class="playbook-check" data-step="3"></summary>
+<div class="step-content">
+Top3集中度: <strong>29.7%</strong> / 最大セクター: <strong>建設 33.9%</strong> / 最大銘柄: <strong>1942 11.8%</strong>
+<ul>
+<li>集中が強いときは新規買いより是正が優先</li>
+<li>セクター偏重は管理DD悪化要因として扱う</li>
+</ul></div></details>
+<details>
+<summary><span class="step-num">4</span>買い/売り判断<span class="playbook-status s-alert">買い停止</span><input type="checkbox" class="playbook-check" data-step="4"></summary>
+<div class="step-content">
+<strong>確認順序: 縮小検討 → 監査要確認 → 検討候補</strong>
+<br>縮小検討: <span style="color:var(--red)">1928, 5161, 1942, 1950, 2768 (9件)</span>
+<br>監査要確認: <span style="color:var(--orange)">1414, 1605, 1942, 1950, 2768 (5件)</span>
+<br>DD改善後の検討候補: <span style="color:var(--accent)">3946 (1件)</span>
+<br>価格到達: 2件 (うち実行可能: 0件)
+<ul>
+<li>価格到達は実行許可ではない — 監査・DD条件も確認</li>
+<li style="color:var(--red)">新規買い停止中 — 候補はDD改善後に再評価</li>
+</ul></div></details>
+<details>
+<summary><span class="step-num">5</span>メモ・振り返り<input type="checkbox" class="playbook-check" data-step="5"></summary>
+<div class="step-content">
+<div style="margin-bottom:6px">今週の判断メモ (ブラウザに保存・週次リセット):</div>
+<textarea id="playbook-memo" class="playbook-memo" placeholder="来週確認 / 売却候補 / 決算待ち …"></textarea>
+<button id="playbook-copy" class="playbook-copy-btn" data-text="DD8 是正 / 新規買い停止 / 管理DD 8.6% / 検討候補1 / 監査確認5 / 縮小検討9 / danger時価42.9% / danger配当41.2%">テキストをコピー</button>
+</div></details>
+</div>
 <div class="section">
 <h3 style="margin-top:0">ポートフォリオ全体: 今やること</h3>
 <div class="action-box action-fail"><strong>新規買い: 停止</strong> — 管理DD 8.6% (DD8 是正) / アラート 4件</div>
@@ -1135,6 +1241,48 @@ function switchTab(tabId) {
     document.getElementById(tabId).classList.add('active');
     document.querySelector('[data-tab="'+tabId+'"]').classList.add('active');
 }
+
+// ── Playbook localStorage ──
+(function() {
+  var d = new Date(), y = d.getFullYear();
+  var jan1 = new Date(y,0,1);
+  var wn = Math.ceil(((d - jan1) / 86400000 + jan1.getDay() + 1) / 7);
+  var weekKey = y + '-W' + String(wn).padStart(2,'0');
+
+  document.querySelectorAll('.playbook-check').forEach(function(cb) {
+    var key = 'pb-' + cb.dataset.step + '-' + weekKey;
+    cb.checked = localStorage.getItem(key) === '1';
+    _updateNum(cb);
+    cb.addEventListener('change', function() {
+      localStorage.setItem(key, cb.checked ? '1' : '0');
+      _updateNum(cb);
+    });
+  });
+  function _updateNum(cb) {
+    var n = cb.closest('summary');
+    if (!n) return;
+    var s = n.querySelector('.step-num');
+    if (s) { if (cb.checked) s.classList.add('done'); else s.classList.remove('done'); }
+  }
+
+  var memo = document.getElementById('playbook-memo');
+  if (memo) {
+    var mk = 'pb-memo-' + weekKey;
+    memo.value = localStorage.getItem(mk) || '';
+    memo.addEventListener('input', function() { localStorage.setItem(mk, memo.value); });
+  }
+
+  var copyBtn = document.getElementById('playbook-copy');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      var t = copyBtn.dataset.text || '';
+      navigator.clipboard.writeText(t).then(function() {
+        copyBtn.textContent = 'コピー済み';
+        setTimeout(function() { copyBtn.textContent = 'テキストをコピー'; }, 1500);
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>
