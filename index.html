@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dividend-toolkit Dashboard - 2026-03-09 09:39</title>
+<title>dividend-toolkit Dashboard - 2026-03-09 10:26</title>
 <style>
 :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
         --text2: #94a3b8; --accent: #38bdf8; --green: #22c55e; --yellow: #eab308;
@@ -89,7 +89,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <body>
 <div class="container">
 <h1>dividend-toolkit Dashboard</h1>
-<div class="subtitle">2026-03-09 09:39 時点</div>
+<div class="subtitle">2026-03-09 10:26 時点</div>
 <div class="tab-nav">
 <button class="tab-btn active" data-tab="tab-guard" onclick="switchTab('tab-guard')">ガード <span class="tab-count">4</span></button>
 <button class="tab-btn" data-tab="tab-audit" onclick="switchTab('tab-audit')">監査 <span class="tab-count">21</span></button>
@@ -112,10 +112,17 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div class="card"><div class="label">銘柄数</div><div class="value">21</div></div>
 <div class="card"><div class="label">含み損益率</div><div class="value pos">+20.4%</div><div class="sub">含み益状態</div></div>
 <div class="card"><div class="label"><span class="tip" data-tip="集中シナリオ(上位3銘柄/景気敏感/金融/ALERT・FAIL/危険フラグ)の最悪値。&#10;PF全体シナリオは含まない。">集中リスクDD</span></div><div class="value neg">8.6%</div><div class="sub">危険フラグ銘柄-20%</div></div>
-<div class="card"><div class="label"><span class="tip" data-tip="管理DD = max(実績DD, 集中リスクDD)。&#10;DDルール (6%注意/8%修正/10%強制) はこの値で判定。&#10;PF全体シナリオは市場リスクのため管理DD対象外。">管理DD</span></div><div class="value neg">8.6%</div><div class="sub">修正必要</div></div>
+<div class="card"><div class="label"><span class="tip" data-tip="管理DD = max(実績DD, 集中リスクDD)。&#10;DDルール (6%注意/8%修正/10%強制) はこの値で判定。&#10;PF全体シナリオは市場リスクのため管理DD対象外。">管理DD</span></div><div class="value neg">8.6%</div><div class="sub">修正必要</div><div class="sub" style="font-size:10px">主因: 危険フラグ銘柄-20</div></div>
 <div class="card"><div class="label"><span class="tip" data-tip="PF全体が一律下落するシナリオ。&#10;分散では回避できない市場リスク。&#10;管理DDには加算しない (参考値)。">市場リスク(参考)</span></div><div class="value">10.0%</div><div class="sub">PF全体下落時</div></div>
 </div>
-<div class="action-box action-alert"><strong>DDアクション: 修正必要</strong> — 管理DD 8.6% — 集中リスク 8.6% (危険フラグ銘柄-20%)。リバランス計画を1週間以内に策定。
+<div class="action-box action-alert"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><strong>管理DD 8.6%</strong> — <span style="font-size:13px">修正必要</span></div><div style="font-size:12px">主因: 集中リスク (危険フラグ銘柄-20% 8.6%)</div></div>
+<table style="margin:8px 0 4px;font-size:12px;width:auto;min-width:300px"><tbody>
+<tr><td style="padding:2px 8px;color:var(--text2)">実績DD (含み損率)</td><td style="padding:2px 8px" class="right ">0.0%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">含み益状態</td></tr>
+<tr><td style="padding:2px 8px;color:var(--text2)">集中リスクDD</td><td style="padding:2px 8px" class="right neg">8.6%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">危険フラグ銘柄-20%</td></tr>
+<tr style="border-top:1px solid var(--border)"><td style="padding:2px 8px;font-weight:700">→ 管理DD</td><td style="padding:2px 8px;font-weight:700" class="right neg">8.6%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">= max(実績, 集中リスク)</td></tr>
+<tr><td style="padding:2px 8px;color:var(--text2)">市場リスク (参考)</td><td style="padding:2px 8px" class="right">10.0%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">管理DD対象外</td></tr>
+</tbody></table>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">DDルール閾値: 6%=注意 / 8%=修正 / 10%=強制</div>
 <ul style="margin:6px 0 0 16px;font-size:12px;list-style:disc">
 <li>新規買い: 原則停止 (例外: PASS銘柄のゾーン③到達時のみ)</li>
 <li>集中是正: 上位3銘柄の比率低減を検討</li>
@@ -125,7 +132,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 </div>
 <div style="margin:12px 0;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px"><h3 style="margin:0 0 8px;font-size:14px">ポートフォリオ実行判断</h3>
 <div style="color:var(--red);font-weight:700;font-size:14px">新規買い: 停止中</div><div style="font-size:12px;color:var(--text2);margin-top:2px">DD段階またはリスク状況により新規購入を制限中</div>
-<div style="margin-top:6px;font-size:12px"><strong>買い優先:</strong> 3946, 4206, 7453, 7867, 8098</div>
+<div style="margin-top:6px;font-size:12px"><strong>DD改善後の検討候補:</strong> 3946, 4206, 7453, 7867, 8098<span style="color:var(--text2);font-size:11px;margin-left:6px">(DD制約解除後に再評価)</span></div>
 <div style="margin-top:4px;font-size:12px"><strong>監査要確認:</strong> 1414, 1605, 1942, 1950, 2768</div>
 <div style="margin-top:4px;font-size:12px"><strong>縮小検討:</strong> 1928, 5161, 1942, 1950, 2768</div>
 </div>
@@ -165,21 +172,21 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 </tbody></table>
 <h3>ストレス寄与 (セクター別)</h3>
 <table><thead><tr><th>シナリオ</th><th>セクター</th><th class="right">想定損失</th><th class="right">寄与率</th></tr></thead><tbody>
-<tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;54,966</td><td class="right">0.2%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>建設</td><td class="right neg">&yen;136,988</td><td class="right">0.6%</td></tr>
+<tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;54,966</td><td class="right">0.2%</td></tr>
+<tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;456,166</td><td class="right">2.1%</td></tr>
 <tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;47,329</td><td class="right">0.2%</td></tr>
 <tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;52,491</td><td class="right">0.2%</td></tr>
-<tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;456,166</td><td class="right">2.1%</td></tr>
 <tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;102,445</td><td class="right">0.5%</td></tr>
+<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,729</td><td class="right">0.1%</td></tr>
 <tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;140,781</td><td class="right">0.7%</td></tr>
 <tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;33,425</td><td class="right">0.1%</td></tr>
-<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,729</td><td class="right">0.1%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>商社</td><td class="right neg">&yen;54,200</td><td class="right">0.2%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,864</td><td class="right">0.2%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;72,758</td><td class="right">0.3%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;62,462</td><td class="right">0.3%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;62,891</td><td class="right">0.3%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;487,584</td><td class="right">2.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;62,462</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;72,758</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,864</td><td class="right">0.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;62,891</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>商社</td><td class="right neg">&yen;54,200</td><td class="right">0.2%</td></tr>
 </tbody></table>
 <h3>銘柄別詳細</h3>
 <table><thead><tr>
@@ -274,7 +281,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF/純利益 = 0.29 — 一過性利益疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 借入返済またはEBITDA増加, 営業CF改善または特別損益の説明確認</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 借入返済またはEBITDA増加, FCF黒字転換, 営業CF改善または特別損益の説明確認</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 5161 西川ゴム工業</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS悪化中にDPS増加 — 配当性向悪化懸念</div>
@@ -282,41 +289,41 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> 配当性向 102.1% は危険水準 (&gt;=90.0%)</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS前年比 -21.6%</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPSが悪化しているにもかかわらずDPSが増加 — 持続性に疑問</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 配当性向が70.0%未満に改善, EPS回復, 増益転換</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: EPS回復, 配当性向が70.0%未満に改善, 増益転換</div>
 </div></div>
 <div class="tab-panel" id="tab-zone"><h2>買いゾーン判定 (buy_zone_engine)</h2>
-<div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>判定凡例:</strong> <span style="color:#22c55e">BUY_NOW</span>=即時買い推奨 / <span style="color:#86efac">BUY_SMALL</span>=小ロットで打診買い / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>ゾーン到達</strong>=株価がゾーン上限以下 (価格条件のみ) &nbsp;|&nbsp; <strong>実行可能</strong>=到達 + 判定BUY + 監査OK + DD余裕 すべて充足</div>
+<div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>判定凡例:</strong> <span style="color:#22c55e">BUY_NOW</span>=即時買い推奨 / <span style="color:#86efac">BUY_SMALL</span>=小ロットで打診買い / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=株価がゾーン上限以下 (価格条件の達成であり実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格到達 + 判定BUY + 監査OK + DD余裕 すべて充足</div>
 <div class="cards">
 <div class="card"><div class="label">銘柄数</div><div class="value">21</div></div>
 <div class="card"><div class="label">BUY</div><div class="value pos">0</div></div>
 <div class="card"><div class="label">WAIT</div><div class="value warn">3</div></div>
 <div class="card"><div class="label">AVOID</div><div class="value neg">18</div></div>
-<div class="card"><div class="label">ゾーン到達</div><div class="value">2</div></div>
+<div class="card"><div class="label">価格到達</div><div class="value">2</div></div>
 <div class="card"><div class="label">実行可能</div><div class="value pos">0</div></div>
 </div>
 <table><thead><tr>
 <th>コード</th><th>銘柄</th><th class="center">判定</th>
-<th class="center"><span class="tip" data-tip="株価がゾーン上限以下かどうか (価格条件)">到達</span></th>
-<th class="center"><span class="tip" data-tip="到達 + BUY判定 + 監査OK + DD余裕&#10;すべて充足で実行可能">実行</span></th>
+<th class="center"><span class="tip" data-tip="株価がゾーン上限以下 (価格条件の達成であり実行許可ではない)">価格</span></th>
+<th class="center"><span class="tip" data-tip="価格到達 + BUY判定 + 監査OK + DD余裕&#10;すべて充足で実行可能">実行</span></th>
 <th class="right">株価</th>
 <th class="right"><span class="tip" data-tip="EPV (収益力価値) と DYV (配当利回り価値) の業種別ブレンド。&#10;EPV = 予想EPS × 参照PER&#10;DYV = 予想DPS / 参照利回り">適正価格</span></th>
 <th class="right"><span class="tip" data-tip="(適正価格 - 現在株価) / 適正価格 × 100&#10;プラス=割安, マイナス=割高">MOS</span></th>
 <th class="right">利回り</th>
 <th class="center">監査</th><th>業種手法</th>
 </tr></thead><tbody>
-<tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span></td><td class="center"><span style="color:var(--green);font-weight:700">● ① 小さく入る</span></td><td class="center"><span style="color:var(--orange);font-size:11px">スコア不足</span></td><td class="right">&yen;1,406</td><td class="right">&yen;1,896</td><td class="right"><span class="pos">+25.9%</span></td><td class="right">3.24%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">正規化EPS+利回り帯</div><div style="font-size:10px;color:var(--text2)">construction</div></td></tr>
+<tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span></td><td class="center"><span style="color:var(--accent);font-weight:700">● ① 打診買い</span></td><td class="center"><span style="color:var(--orange);font-size:11px">スコア不足</span></td><td class="right">&yen;1,406</td><td class="right">&yen;1,896</td><td class="right"><span class="pos">+25.9%</span></td><td class="right">3.24%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">正規化EPS+利回り帯</div><div style="font-size:10px;color:var(--text2)">construction</div></td></tr>
 <tr><td><strong>1605</strong></td><td>ＩＮＰＥＸ</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;4,091</td><td class="right">&yen;2,113</td><td class="right"><span class="neg">-93.6%</span></td><td class="right">2.64%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">市況平準化EPS+保守DYV</div><div style="font-size:10px;color:var(--text2)">resource</div></td></tr>
-<tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">監査NG</span></td><td class="right">&yen;3,568</td><td class="right">&yen;3,194</td><td class="right"><span class="neg">-11.7%</span></td><td class="right">4.09%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span></td><td><div style="font-size:11px">正規化EPS+利回り帯</div><div style="font-size:10px;color:var(--text2)">construction</div></td></tr>
+<tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">監査未通過</span></td><td class="right">&yen;3,568</td><td class="right">&yen;3,194</td><td class="right"><span class="neg">-11.7%</span></td><td class="right">4.09%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span></td><td><div style="font-size:11px">正規化EPS+利回り帯</div><div style="font-size:10px;color:var(--text2)">construction</div></td></tr>
 <tr><td><strong>1942</strong></td><td>関電工</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;6,391</td><td class="right">&yen;2,165</td><td class="right"><span class="neg">-195.2%</span></td><td class="right">1.88%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">正規化EPS+利回り帯</div><div style="font-size:10px;color:var(--text2)">construction</div></td></tr>
 <tr><td><strong>1950</strong></td><td>日本電設工業</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;5,140</td><td class="right">&yen;2,333</td><td class="right"><span class="neg">-120.3%</span></td><td class="right">2.24%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">正規化EPS+利回り帯</div><div style="font-size:10px;color:var(--text2)">construction</div></td></tr>
 <tr><td><strong>2768</strong></td><td>双日</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;6,317</td><td class="right">&yen;3,604</td><td class="right"><span class="neg">-75.3%</span></td><td class="right">2.61%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">資源感応度調整EPV+DYV</div><div style="font-size:10px;color:var(--text2)">trading</div></td></tr>
 <tr><td><strong>3543</strong></td><td>コメダホールディングス</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;2,898</td><td class="right">&yen;2,866</td><td class="right"><span class="neg">-1.1%</span></td><td class="right">2.07%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">EPV+DYVブレンド</div><div style="font-size:10px;color:var(--text2)">defensive</div></td></tr>
 <tr><td><strong>3946</strong></td><td>トーモク</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;3,465</td><td class="right">&yen;2,614</td><td class="right"><span class="neg">-32.6%</span></td><td class="right">3.75%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">PASS</span></td><td><div style="font-size:11px">正規化EPS+DYV</div><div style="font-size:10px;color:var(--text2)">cyclical</div></td></tr>
 <tr><td><strong>4206</strong></td><td>アイカ工業</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;3,823</td><td class="right">&yen;3,346</td><td class="right"><span class="neg">-14.3%</span></td><td class="right">3.61%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">PASS</span></td><td><div style="font-size:11px">正規化EPS+DYV</div><div style="font-size:10px;color:var(--text2)">cyclical</div></td></tr>
-<tr><td><strong>5161</strong></td><td>西川ゴム工業</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">監査NG</span></td><td class="right">&yen;4,180</td><td class="right">&yen;2,137 <span class="tip" data-tip="参照利回り 18.69% を上限 8.0% にクリップ" style="color:var(--yellow);font-size:10px">!</span></td><td class="right"><span class="neg">-95.6%</span></td><td class="right">4.35%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span></td><td><div style="font-size:11px">正規化EPS+DYV</div><div style="font-size:10px;color:var(--text2)">cyclical</div></td></tr>
+<tr><td><strong>5161</strong></td><td>西川ゴム工業</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">監査未通過</span></td><td class="right">&yen;4,180</td><td class="right">&yen;2,137 <span class="tip" data-tip="参照利回り 18.69% を上限 8.0% にクリップ" style="color:var(--yellow);font-size:10px">!</span></td><td class="right"><span class="neg">-95.6%</span></td><td class="right">4.35%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span></td><td><div style="font-size:11px">正規化EPS+DYV</div><div style="font-size:10px;color:var(--text2)">cyclical</div></td></tr>
 <tr><td><strong>6209</strong></td><td>リケンＮＰＲ</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;4,240</td><td class="right">&yen;2,861</td><td class="right"><span class="neg">-48.2%</span></td><td class="right">3.89%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">正規化EPS+DYV</div><div style="font-size:10px;color:var(--text2)">cyclical</div></td></tr>
 <tr><td><strong>7453</strong></td><td>良品計画</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;3,585</td><td class="right">&yen;3,337</td><td class="right"><span class="neg">-7.4%</span></td><td class="right">0.78%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">PASS</span></td><td><div style="font-size:11px">EPV重視</div><div style="font-size:10px;color:var(--text2)">growth_low_yield</div></td></tr>
-<tr><td><strong>7867</strong></td><td>タカラトミー</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span style="color:var(--green);font-weight:700">● ① 小さく入る</span></td><td class="center"><span style="color:var(--orange);font-size:11px">スコア不足</span></td><td class="right">&yen;2,784</td><td class="right">&yen;2,844</td><td class="right"><span class="warn">+2.1%</span></td><td class="right">2.30%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">PASS</span></td><td><div style="font-size:11px">EPV+DYVブレンド</div><div style="font-size:10px;color:var(--text2)">general</div></td></tr>
+<tr><td><strong>7867</strong></td><td>タカラトミー</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span style="color:var(--accent);font-weight:700">● ① 打診買い</span></td><td class="center"><span style="color:var(--orange);font-size:11px">スコア不足</span></td><td class="right">&yen;2,784</td><td class="right">&yen;2,844</td><td class="right"><span class="warn">+2.1%</span></td><td class="right">2.30%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">PASS</span></td><td><div style="font-size:11px">EPV+DYVブレンド</div><div style="font-size:10px;color:var(--text2)">general</div></td></tr>
 <tr><td><strong>8098</strong></td><td>稲畑産業</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;4,155</td><td class="right">&yen;3,130</td><td class="right"><span class="neg">-32.8%</span></td><td class="right">3.08%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">PASS</span></td><td><div style="font-size:11px">資源感応度調整EPV+DYV</div><div style="font-size:10px;color:var(--text2)">trading</div></td></tr>
 <tr><td><strong>8316</strong></td><td>三井住友フィナンシャルＧ</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;5,423</td><td class="right">&yen;3,138</td><td class="right"><span class="neg">-72.8%</span></td><td class="right">2.90%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">PER保守化+DYV</div><div style="font-size:10px;color:var(--text2)">bank</div></td></tr>
 <tr><td><strong>8591</strong></td><td>オリックス</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span></td><td class="center"><span class="na">—</span></td><td class="center"><span style="color:var(--orange);font-size:11px">価格未到達</span></td><td class="right">&yen;5,062</td><td class="right">&yen;3,431</td><td class="right"><span class="neg">-47.5%</span></td><td class="right">3.70%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span></td><td><div style="font-size:11px">安定性調整EPV+DYV</div><div style="font-size:10px;color:var(--text2)">lease_finance</div></td></tr>
@@ -359,13 +366,13 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr><td><strong>9008</strong></td><td>京王電鉄</td><td class="right">&yen;3,671</td><td class="right">&yen;3,887</td><td class="right">&yen;3,779</td><td class="right">13.4x</td><td class="right">2.8%</td><td>defensive</td><td style="font-size:11px">EPV+DYVブレンド</td><td><span style="color:var(--green);font-size:10px">正常</span></td></tr>
 </tbody></table>
 <h3>買いゾーン & ターゲット価格</h3>
-<div style="font-size:11px;color:var(--text2);margin-bottom:8px">① Zone1=適正価格付近 (小さく入る) / ② Zone2=10%割安 (通常買い) / ③ Zone3=25%割安 (主力買い)</div>
+<div style="font-size:11px;color:var(--text2);margin-bottom:8px">① 打診買い=適正価格付近 / ② 標準買い=10%割安 / ③ 強気買い=25%割安 &nbsp;|&nbsp; 「価格到達」は価格条件の充足であり、実行許可ではありません</div>
 <table><thead><tr>
 <th>コード</th><th>銘柄</th><th class="right">現在株価</th>
-<th class="right">① 小さく入る</th><th class="right">② 通常買い</th>
-<th class="right">③ 主力買い</th><th class="center">ステータス</th>
+<th class="right">① 打診買い</th><th class="right">② 標準買い</th>
+<th class="right">③ 強気買い</th><th class="center">価格到達</th>
 </tr></thead><tbody>
-<tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="right">&yen;1,406</td><td class="right">&yen;1,896</td><td class="right">&yen;1,706</td><td class="right">&yen;1,422</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">③ 主力買い突入中</span></td></tr>
+<tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="right">&yen;1,406</td><td class="right">&yen;1,896</td><td class="right">&yen;1,706</td><td class="right">&yen;1,422</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#38bdf8;color:#fff;font-weight:700;font-size:13px">③ 強気買い 価格到達</span></td></tr>
 <tr><td><strong>1605</strong></td><td>ＩＮＰＥＸ</td><td class="right">&yen;4,091</td><td class="right">&yen;2,113</td><td class="right">&yen;1,902</td><td class="right">&yen;1,585</td><td class="center"><span class="na">圏外 (+94%)</span></td></tr>
 <tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="right">&yen;3,568</td><td class="right">&yen;3,194</td><td class="right">&yen;2,875</td><td class="right">&yen;2,396</td><td class="center"><span class="na">圏外 (+12%)</span></td></tr>
 <tr><td><strong>1942</strong></td><td>関電工</td><td class="right">&yen;6,391</td><td class="right">&yen;2,165</td><td class="right">&yen;1,948</td><td class="right">&yen;1,624</td><td class="center"><span class="na">圏外 (+195%)</span></td></tr>
@@ -377,7 +384,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr><td><strong>5161</strong></td><td>西川ゴム工業</td><td class="right">&yen;4,180</td><td class="right">&yen;2,137</td><td class="right">&yen;1,923</td><td class="right">&yen;1,603</td><td class="center"><span class="na">圏外 (+96%)</span></td></tr>
 <tr><td><strong>6209</strong></td><td>リケンＮＰＲ</td><td class="right">&yen;4,240</td><td class="right">&yen;2,861</td><td class="right">&yen;2,575</td><td class="right">&yen;2,146</td><td class="center"><span class="na">圏外 (+48%)</span></td></tr>
 <tr><td><strong>7453</strong></td><td>良品計画</td><td class="right">&yen;3,585</td><td class="right">&yen;3,337</td><td class="right">&yen;3,003</td><td class="right">&yen;2,503</td><td class="center"><span class="na">圏外 (+7%)</span></td></tr>
-<tr><td><strong>7867</strong></td><td>タカラトミー</td><td class="right">&yen;2,784</td><td class="right">&yen;2,844</td><td class="right">&yen;2,560</td><td class="right">&yen;2,133</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">① 小さく入る突入中</span></td></tr>
+<tr><td><strong>7867</strong></td><td>タカラトミー</td><td class="right">&yen;2,784</td><td class="right">&yen;2,844</td><td class="right">&yen;2,560</td><td class="right">&yen;2,133</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#38bdf8;color:#fff;font-weight:700;font-size:13px">① 打診買い 価格到達</span></td></tr>
 <tr><td><strong>8098</strong></td><td>稲畑産業</td><td class="right">&yen;4,155</td><td class="right">&yen;3,130</td><td class="right">&yen;2,817</td><td class="right">&yen;2,348</td><td class="center"><span class="na">圏外 (+33%)</span></td></tr>
 <tr><td><strong>8316</strong></td><td>三井住友フィナンシャルＧ</td><td class="right">&yen;5,423</td><td class="right">&yen;3,138</td><td class="right">&yen;2,824</td><td class="right">&yen;2,354</td><td class="center"><span class="na">圏外 (+73%)</span></td></tr>
 <tr><td><strong>8591</strong></td><td>オリックス</td><td class="right">&yen;5,062</td><td class="right">&yen;3,431</td><td class="right">&yen;3,088</td><td class="right">&yen;2,573</td><td class="center"><span class="na">圏外 (+48%)</span></td></tr>
@@ -387,9 +394,9 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr><td><strong>8766</strong></td><td>東京海上ＨＤ</td><td class="right">&yen;6,169</td><td class="right">&yen;4,561</td><td class="right">&yen;4,105</td><td class="right">&yen;3,421</td><td class="center"><span class="na">圏外 (+35%)</span></td></tr>
 <tr><td><strong>9008</strong></td><td>京王電鉄</td><td class="right">&yen;3,981</td><td class="right">&yen;3,779</td><td class="right">&yen;3,401</td><td class="right">&yen;2,834</td><td class="center"><span class="na">圏外 (+5%)</span></td></tr>
 </tbody></table>
-<h3>買いゾーン到達銘柄</h3>
-<div class="alert-box" style="border-color:#ef444466;background:#ef444411"><div class="title" style="color:var(--red)">1414 ショーボンドＨＤ — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span> ① 小さく入る</div><div class="msg">株価 &yen;1,406 / 利回り 3.24% / 適正価格 ¥1,896 / MOS +25.9%</div><div style="margin-top:4px;font-size:12px;color:var(--red);font-weight:700">判定 WAIT</div><div style="margin-top:2px;font-size:11px;color:var(--text2)">次の条件: PER低下または利回り上昇で割安度改善</div></div>
-<div class="alert-box" style="border-color:#ef444466;background:#ef444411"><div class="title" style="color:var(--red)">7867 タカラトミー — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span> ① 小さく入る</div><div class="msg">株価 &yen;2,784 / 利回り 2.30% / 適正価格 ¥2,844 / MOS +2.1%</div><div style="margin-top:4px;font-size:12px;color:var(--red);font-weight:700">判定 AVOID</div><div style="margin-top:2px;font-size:11px;color:var(--text2)">次の条件: 業績回復・利回り上昇・監査改善</div></div></div>
+<h3>価格到達銘柄</h3>
+<div class="alert-box" style="border-color:#ef444466;background:#ef444411"><div class="title" style="color:var(--red)">1414 ショーボンドＨＤ — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span> ① 打診買い 価格到達</div><div class="msg">株価 &yen;1,406 / 利回り 3.24% / 適正価格 ¥1,896 / MOS +25.9%</div><div style="margin-top:4px;font-size:12px;color:var(--red);font-weight:700">価格到達のみ — 判定 WAIT (実行不可)</div><div style="margin-top:2px;font-size:11px;color:var(--text2)">次の条件: PER低下または利回り上昇で割安度改善</div></div>
+<div class="alert-box" style="border-color:#ef444466;background:#ef444411"><div class="title" style="color:var(--red)">7867 タカラトミー — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span> ① 打診買い 価格到達</div><div class="msg">株価 &yen;2,784 / 利回り 2.30% / 適正価格 ¥2,844 / MOS +2.1%</div><div style="margin-top:4px;font-size:12px;color:var(--red);font-weight:700">価格到達のみ — 判定 AVOID (実行不可)</div><div style="margin-top:2px;font-size:11px;color:var(--text2)">次の条件: 業績回復・利回り上昇・監査改善</div></div></div>
 <div class="tab-panel" id="tab-calendar"><h2>配当カレンダー (dividend_calendar)</h2>
 <div class="cards">
 <div class="card"><div class="label">年間配当</div><div class="value">&yen;659,356</div></div>
@@ -968,6 +975,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>2802</strong></td><td>味の素</td><td class="right ">1.06%</td><td class="right">120.5x</td><td class="right">5.86x</td><td class="right pos">+8.5%</td><td class="center"><span class="na">-</span></td><td class="right">31 <span style="font-size:10px;padding:1px 4px;border-radius:3px;background:#eab30833;color:#eab308">参考</span></td><td class="center"></td></tr>
 </tbody></table></div>
 <div class="tab-panel" id="tab-action"><h2>実行アクションカード</h2>
+<div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>用語:</strong> <span style="color:#22c55e">BUY_NOW/BUY_SMALL</span>=購入推奨判定 / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=ゾーン価格条件の達成 (実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格+監査+DD全て充足 &nbsp;|&nbsp; <strong>次回検討候補</strong>=監査PASSだが価格/DD等の条件待ち</div>
 <div class="section">
 <h3 style="margin-top:0">ポートフォリオ全体: 今やること</h3>
 <div class="action-box action-fail"><strong>新規買い: 停止</strong> — 管理DD 8.6% (修正必要) / アラート 4件</div>
@@ -978,13 +986,13 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <li>景気敏感・監査弱い銘柄の比率を見直し</li>
 <li>1週間以内にリバランス計画を策定</li>
 </ul>
-<div style="margin:6px 0;font-size:13px"><strong style="color:var(--yellow)">監査優良 (DD改善後に買い候補):</strong> 3946(価格待ち)</div>
+<div style="margin:6px 0;font-size:13px"><strong style="color:var(--yellow)">DD改善後の検討候補:</strong> 3946(<span style="color:var(--yellow);font-size:11px">価格待ち</span>)<div style="font-size:11px;color:var(--text2);margin-top:2px">監査PASS — DD制約解除後に再評価</div></div>
 <div style="margin:4px 0;font-size:13px"><strong style="color:var(--orange)">監査要確認:</strong> 1414, 1605, 1942, 1950, 2768</div>
 <div style="margin:4px 0;font-size:13px"><strong style="color:var(--red)">縮小検討:</strong> 1928, 5161, 1942, 1950, 2768</div>
 </div>
-<h3>ゾーン到達だが制約あり</h3>
-<div class="action-box action-warn"><strong>1414 ショーボンドＨＤ</strong> — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span> ① 小さく入る / 制約: 総合スコア不足 (利回り・PER・MOS等の複合判定) → 次: PER低下または利回り上昇で割安度改善</div>
-<div class="action-box action-warn"><strong>7867 タカラトミー</strong> — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span> ① 小さく入る / 制約: 割高水準のため見送り → 次: 業績回復・利回り上昇・監査改善</div>
+<h3>価格到達・制約あり (実行不可)</h3>
+<div class="action-box action-warn"><strong>1414 ショーボンドＨＤ</strong> — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WAIT</span> ① 打診買い 価格到達 / 制約: 総合スコア不足 (利回り・PER・MOS等の複合判定) → 次: PER低下または利回り上昇で割安度改善</div>
+<div class="action-box action-warn"><strong>7867 タカラトミー</strong> — <span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">AVOID</span> ① 打診買い 価格到達 / 制約: 割高水準のため見送り → 次: 業績回復・利回り上昇・監査改善</div>
 <h3>AVOID (買い不適格)</h3>
 <div style="margin:4px 0;padding:8px 12px;background:#ef444411;border:1px solid #ef444444;border-radius:6px;font-size:13px;color:var(--red)"><strong>1605</strong> ＩＮＰＥＸ — 適正価格 ¥2,113 を 94% 上回っている</div>
 <div style="margin:4px 0;padding:8px 12px;background:#ef444411;border:1px solid #ef444444;border-radius:6px;font-size:13px;color:var(--red)"><strong>1928</strong> 積水ハウス — 監査判定が ALERT/FAIL のため買い見送り</div>
