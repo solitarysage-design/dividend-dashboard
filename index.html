@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dividend-toolkit Dashboard - 2026-03-11 14:20</title>
+<title>dividend-toolkit Dashboard - 2026-03-11 14:24</title>
 <style>
 :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
         --text2: #94a3b8; --accent: #38bdf8; --green: #22c55e; --yellow: #eab308;
@@ -138,7 +138,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <body>
 <div class="container">
 <h1>dividend-toolkit Dashboard</h1>
-<div class="subtitle">2026-03-11 14:20 時点<span style="margin-left:12px;font-size:12px;padding:2px 10px;border-radius:4px;background:var(--card);border:1px solid var(--border)">日経RSI <strong style="color:var(--red)">72.3</strong> <span style="color:var(--red)">過熱</span></span></div>
+<div class="subtitle">2026-03-11 14:24 時点<span style="margin-left:12px;font-size:12px;padding:2px 10px;border-radius:4px;background:var(--card);border:1px solid var(--border)">日経RSI <strong style="color:var(--red)">71.8</strong> <span style="color:var(--red)">過熱</span></span></div>
 <div class="tab-nav">
 <button class="tab-btn active" data-tab="tab-guard" onclick="switchTab('tab-guard')">ガード <span class="tab-count">4</span></button>
 <button class="tab-btn" data-tab="tab-audit" onclick="switchTab('tab-audit')">監査 <span class="tab-count">21</span></button>
@@ -170,7 +170,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr style="border-top:1px solid var(--border)"><td style="padding:2px 8px;font-weight:700">→ 管理DD</td><td style="padding:2px 8px;font-weight:700" class="right neg">8.4%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">= max(実績, 集中リスク)</td></tr>
 <tr><td style="padding:2px 8px;color:var(--text2)">市場リスク (参考)</td><td style="padding:2px 8px" class="right">10.0%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">管理DD対象外</td></tr>
 </tbody></table>
-<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: 機械 &yen;70,980, 建設 &yen;474,466, 食品 &yen;24,746</div>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: その他金融 &yen;61,593, 食品 &yen;24,746, 商社 &yen;53,827</div>
 <div style="font-size:11px;color:var(--text2)">補助要因: 景気敏感-15% 6.3%</div>
 <div style="font-size:11px;color:var(--text2);margin-top:4px">DDルール閾値: DD6=注意 / DD8=是正 / DD10=強制</div>
 <ul style="margin:6px 0 0 16px;font-size:12px;list-style:disc">
@@ -202,7 +202,6 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div class="alert-box" style="border-color:#f9731666;background:#f9731611"><div class="title" style="color:var(--orange)">配当リスク</div><div class="msg">ALERT/FAIL・危険フラグ銘柄の年間配当: &yen;271,500 (全体の 40.3%)</div></div>
 <h3>集中度</h3>
 <div class="cards">
-<div class="card"><div class="label">最大銘柄</div><div class="value">1942</div><div class="sub">11.4%</div></div>
 <div class="card"><div class="label">Top3集中度</div><div class="value">28.8%</div></div>
 <div class="card"><div class="label">Top5集中度</div><div class="value">44.0%</div></div>
 <div class="card"><div class="label">最大セクター</div><div class="value">建設</div><div class="sub">35.0%</div></div>
@@ -232,19 +231,19 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <table><thead><tr><th>シナリオ</th><th>セクター</th><th class="right">想定損失</th><th class="right">寄与率</th></tr></thead><tbody>
 <tr><td>上位3銘柄-10%</td><td>建設</td><td class="right neg">&yen;131,397</td><td class="right">0.6%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;52,739</td><td class="right">0.2%</td></tr>
-<tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;53,488</td><td class="right">0.2%</td></tr>
 <tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;47,538</td><td class="right">0.2%</td></tr>
 <tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;491,765</td><td class="right">2.2%</td></tr>
-<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,088</td><td class="right">0.1%</td></tr>
-<tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;32,930</td><td class="right">0.1%</td></tr>
-<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;136,504</td><td class="right">0.6%</td></tr>
+<tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;53,488</td><td class="right">0.2%</td></tr>
 <tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;99,406</td><td class="right">0.5%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;70,980</td><td class="right">0.3%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;474,466</td><td class="right">2.1%</td></tr>
+<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,088</td><td class="right">0.1%</td></tr>
+<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;136,504</td><td class="right">0.6%</td></tr>
+<tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;32,930</td><td class="right">0.1%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;61,593</td><td class="right">0.3%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>食品</td><td class="right neg">&yen;24,746</td><td class="right">0.1%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>商社</td><td class="right neg">&yen;53,827</td><td class="right">0.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;474,466</td><td class="right">2.1%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;62,160</td><td class="right">0.3%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,742</td><td class="right">0.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;70,980</td><td class="right">0.3%</td></tr>
 </tbody></table>
 <h3>銘柄別詳細</h3>
 <table><thead><tr>
@@ -297,7 +296,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 </tbody></table>
 <canvas id="sectorCompareChart" style="max-width:700px;margin:1em auto;height:525px"></canvas><script>new Chart(document.getElementById("sectorCompareChart"),{type:"bar",data:{labels:["建設","保険","その他金融","資源","商社","パルプ・紙","機械","化学","証券","その他製造","銀行","ゴム","陸運","小売","食品"],datasets:[{label:"時価比率",data:[35.0,13.8,10.1,7.5,6.6,4.8,3.8,3.4,3.3,2.5,2.4,1.9,1.8,1.7,1.3],backgroundColor:"#38bdf8",borderRadius:4},{label:"配当比率",data:[30.6,14.8,11.8,6.4,6.2,5.8,4.9,4.1,5.5,1.9,2.3,2.7,1.6,0.4,0.9],backgroundColor:"#22c55e",borderRadius:4}]},options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,plugins:{title:{display:true,text:"セクター別: 時価比率 vs 配当比率",color:"#e2e8f0"},legend:{labels:{color:"#e2e8f0"}}},scales:{x:{ticks:{callback:v=>v+"%",color:"#9ca3af"},grid:{color:"#334155"}},y:{ticks:{color:"#9ca3af",font:{size:11}},grid:{color:"#334155"}}}}});</script></div>
 <div class="tab-panel" id="tab-audit"><h2>配当監査 (dividend_audit)</h2>
-<div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>判定凡例:</strong> <span style="color:var(--green)">PASS</span>=安全性・増配確度ともに問題なし / <span style="color:var(--yellow)">WATCH</span>=注意点あり (-H:高リスク, -M:中, -L:低) / <span style="color:var(--orange)">ALERT</span>=複数の警戒シグナル / <span style="color:var(--red)">FAIL</span>=重大な懸念 &nbsp;|&nbsp; <strong>danger_flags</strong>=減配リスクを示す具体的な危険信号 (≥2件でALERT昇格, ≥3件で強制FAIL)</div>
+<div style="font-size:12px;color:var(--text);margin-bottom:14px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;line-height:1.8"><div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px">📖 この画面の読み方</div><div style="margin-bottom:6px">各銘柄の <strong>「配当が今後も安全に続くか」</strong> を4つの視点で採点し、総合判定を出しています。</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 16px"><div><span style="color:var(--green);font-weight:700">● PASS</span> = 配当は安全。安心して保有できる</div><div><span style="color:var(--yellow);font-weight:700">● WATCH</span> = やや注意点あり。定期チェック推奨</div><div><span style="color:var(--orange);font-weight:700">● ALERT</span> = 警戒。減配リスクが高まっている</div><div><span style="color:var(--red);font-weight:700">● FAIL</span> = 危険。減配・無配の可能性が高い</div></div><div style="margin-top:8px;color:var(--text2);font-size:11px">※ スコアは100点満点。65以上=PASS / 45〜64=WATCH / 30〜44=ALERT / 30未満=FAIL</div></div>
 <div class="cards">
 <div class="card"><div class="label">銘柄数</div><div class="value">21</div></div>
 <div class="card"><div class="label">PASS</div><div class="value pos">6</div></div>
@@ -306,12 +305,12 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 </div>
 <table><thead><tr>
 <th>コード</th><th>銘柄</th><th class="center">判定</th>
-<th class="right"><span class="tip" data-tip="配当性向, FCFカバー, 利益カバー等の安全性指標 (40%)">安全性</span></th>
-<th class="right"><span class="tip" data-tip="EPS/DPS成長率, 連続増配年数 (20%)">成長</span></th>
-<th class="right"><span class="tip" data-tip="Net Debt/EBITDA, FCF安定性 (25%)">財務</span></th>
-<th class="right"><span class="tip" data-tip="高利回り危険信号, EPS/DPS乖離等 (15%)">警戒</span></th>
-<th class="right"><span class="tip" data-tip="加重平均: 安全性×40% + 成長×20% + 財務×25% + 警戒×15%&#10;65以上=PASS, 45-64=WATCH, 30-44=ALERT, 30未満=FAIL">総合</span></th>
-<th>リスク根拠</th>
+<th class="right"><span class="tip" data-tip="配当性向・FCFカバー率・利益カバー率など&#10;「今の利益で配当を払い続けられるか」を測る指標 (配点40%)">安全性</span></th>
+<th class="right"><span class="tip" data-tip="EPS(1株利益)・DPS(1株配当)の成長率と連続増配年数&#10;「配当が増え続けているか」を測る指標 (配点20%)">成長</span></th>
+<th class="right"><span class="tip" data-tip="借金の重さ(Net Debt/EBITDA)やフリーキャッシュフローの安定性&#10;「不況に耐えられる財務体質か」を測る指標 (配点25%)">財務</span></th>
+<th class="right"><span class="tip" data-tip="異常に高い利回り・利益と配当の乖離など&#10;「見かけ上だけの好配当ではないか」を測る指標 (配点15%)">警戒</span></th>
+<th class="right"><span class="tip" data-tip="4項目の加重平均スコア (100点満点)&#10;安全性×40% + 財務×25% + 成長×20% + 警戒×15%">総合</span></th>
+<th><span class="tip" data-tip="減配リスクの具体的な根拠。2件以上でALERT、3件以上でFAILに昇格">リスク根拠</span></th>
 </tr></thead><tbody>
 <tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#eab308;color:#fff;font-weight:700;font-size:13px">WATCH</span><div style="font-size:10px;color:#94a3b8;margin-top:2px;font-weight:700">WATCH-L</div><div style="font-size:10px;color:var(--text2)">複合要因型</div></td><td class="right pos">65</td><td class="right pos">70</td><td class="right warn">50</td><td class="right warn">50</td><td class="right warn">60</td><td><div style="font-size:11px;margin:1px 0">営業CF: 直近3期すべてプラス</div><div style="font-size:11px;margin:1px 0">DPS前年比 +30.8% — 増配</div></td></tr>
 <tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span></td><td class="right pos">65</td><td class="right pos">70</td><td class="right neg">15</td><td class="right warn">50</td><td class="right warn">51</td><td><div style="font-size:11px;margin:1px 0">FCFが2期連続赤字 — 借入で配当維持の疑い</div><div style="font-size:11px;margin:1px 0">配当性向 42.6% は健全</div><span class="flag">FCF2期連続赤字 — 借入配当の疑い</span><span class="flag">営業CF/純利益 = 0.29 — 一過性利益疑い</span></td></tr>
@@ -340,7 +339,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF/純利益 = 0.29 — 一過性利益疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加, FCF黒字転換</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 5161 西川ゴム工業</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS悪化中にDPS増加 — 配当性向悪化懸念</div>
@@ -348,7 +347,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> 配当性向 178.2% は危険水準 (&gt;=90.0%)</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS前年比 -21.5%</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPSが悪化しているにもかかわらずDPSが増加 — 持続性に疑問</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 増益転換, EPS回復, 配当性向が70.0%未満に改善</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: EPS回復, 増益転換, 配当性向が70.0%未満に改善</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 8593 三菱ＨＣキャピタル</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
@@ -356,16 +355,16 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF: 直近3期中1期しかプラスでない</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> Net Debt/EBITDA 13.5x — 過剰債務</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF安定化, 営業CF改善または特別損益の説明確認</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加, 営業CF安定化</div>
 </div></div>
 <div class="tab-panel" id="tab-zone"><h2>買いゾーン判定 (buy_zone_engine)</h2>
-<div style="background:#ef444411;border:1px solid #ef444444;border-radius:8px;padding:14px 18px;margin-bottom:16px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div style="font-size:12px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">市場レジーム</div><span style="display:inline-block;padding:2px 12px;border-radius:4px;font-size:13px;font-weight:700;background:#ef444444;color:var(--red)">過熱</span><span style="font-size:13px;color:var(--text)">日経225 月足RSI = <strong>72.3</strong></span></div><div style="margin-top:10px;display:flex;align-items:center;gap:8px"><span style="font-size:10px;color:var(--text2)">0</span><div style="flex:1;height:8px;background:var(--border);border-radius:4px;position:relative;overflow:visible"><div style="position:absolute;left:40%;top:-2px;width:1px;height:12px;background:var(--green);opacity:0.4"></div><div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:var(--yellow);opacity:0.4"></div><div style="position:absolute;left:70%;top:-2px;width:1px;height:12px;background:var(--red);opacity:0.4"></div><div style="position:absolute;left:72.27%;top:-3px;width:14px;height:14px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 6px rgba(0,0,0,0.4);transform:translateX(-7px)"></div></div><span style="font-size:10px;color:var(--text2)">100</span></div><div style="display:flex;justify-content:space-between;margin-top:2px;font-size:9px;color:var(--text2);padding:0 20px"><span style="position:relative;left:30%">40</span><span style="position:relative;left:5%">50</span><span style="position:relative;left:-15%">70</span></div><div style="margin-top:6px;font-size:12px;color:var(--red)">市場は過熱気味 — 新規買いは慎重に</div>
+<div style="background:#ef444411;border:1px solid #ef444444;border-radius:8px;padding:14px 18px;margin-bottom:16px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div style="font-size:12px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">市場レジーム</div><span style="display:inline-block;padding:2px 12px;border-radius:4px;font-size:13px;font-weight:700;background:#ef444444;color:var(--red)">過熱</span><span style="font-size:13px;color:var(--text)">日経225 月足RSI = <strong>71.8</strong></span></div><div style="margin-top:10px;display:flex;align-items:center;gap:8px"><span style="font-size:10px;color:var(--text2)">0</span><div style="flex:1;height:8px;background:var(--border);border-radius:4px;position:relative;overflow:visible"><div style="position:absolute;left:40%;top:-2px;width:1px;height:12px;background:var(--green);opacity:0.4"></div><div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:var(--yellow);opacity:0.4"></div><div style="position:absolute;left:70%;top:-2px;width:1px;height:12px;background:var(--red);opacity:0.4"></div><div style="position:absolute;left:71.79%;top:-3px;width:14px;height:14px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 6px rgba(0,0,0,0.4);transform:translateX(-7px)"></div></div><span style="font-size:10px;color:var(--text2)">100</span></div><div style="display:flex;justify-content:space-between;margin-top:2px;font-size:9px;color:var(--text2);padding:0 20px"><span style="position:relative;left:30%">40</span><span style="position:relative;left:5%">50</span><span style="position:relative;left:-15%">70</span></div><div style="margin-top:6px;font-size:12px;color:var(--red)">市場は過熱気味 — 新規買いは慎重に</div>
 <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)"><div style="font-size:11px;color:var(--text2);font-weight:600;margin-bottom:6px">月足移動平均線</div><div style="display:flex;gap:16px;flex-wrap:wrap">
-<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">中期線 (12MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+18.3%</span></div>
-<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">長期線 (24MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+30.1%</span></div>
+<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">中期線 (12MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+17.9%</span></div>
+<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">長期線 (24MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+29.6%</span></div>
 </div></div>
 </div>
-<div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>判定凡例:</strong> <span style="color:#22c55e">BUY_NOW</span>=即時買い推奨 / <span style="color:#86efac">BUY_SMALL</span>=小ロットで打診買い / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=株価がゾーン上限以下 (価格条件の達成であり実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格到達 + 判定BUY + 監査OK + DD余裕 すべて充足</div>
+<div style="font-size:12px;color:var(--text);margin-bottom:14px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;line-height:1.8"><div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px">📖 この画面の読み方</div><div style="margin-bottom:6px"><strong>「今の株価で買っていいか」</strong> を判定しています。適正価格（過去の利益・配当実績から算出）と現在株価を比較し、割安度を判断します。</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 16px"><div><span style="color:#22c55e;font-weight:700">● BUY_NOW</span> = 割安。買い時</div><div><span style="color:#86efac;font-weight:700">● BUY_SMALL</span> = やや割安。少額で打診買い</div><div><span style="color:#eab308;font-weight:700">● WAIT</span> = 適正〜割高。もう少し待ち</div><div><span style="color:#ef4444;font-weight:700">● AVOID</span> = 監査NGなど。買い不適格</div></div><div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--text2)"><strong>適正価格</strong> = 過去の利益×平均PER と 配当÷平均利回り の加重平均 &nbsp;|&nbsp; <strong>MOS(安全余裕率)</strong> = 適正価格からの割安度。プラスなら割安、マイナスなら割高<br><strong>価格到達</strong> = 株価が買いゾーンに入った状態 &nbsp;|&nbsp; <strong>実行可能</strong> = 価格到達 + BUY判定 + 監査OK + DD余裕 のすべてを満たした状態</div></div>
 <div class="cards">
 <div class="card"><div class="label">銘柄数</div><div class="value">22</div></div>
 <div class="card"><div class="label">BUY</div><div class="value pos">0</div></div>
@@ -379,8 +378,8 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <th class="center"><span class="tip" data-tip="株価がゾーン上限以下 (価格条件の達成であり実行許可ではない)">価格</span></th>
 <th class="center"><span class="tip" data-tip="価格到達 + BUY判定 + 監査OK + DD余裕&#10;すべて充足で実行可能">実行</span></th>
 <th class="right">株価</th>
-<th class="right"><span class="tip" data-tip="EPV (収益力価値) と DYV (配当利回り価値) の業種別ブレンド。&#10;EPV = 予想EPS × 参照PER&#10;DYV = 予想DPS / 参照利回り">適正価格</span></th>
-<th class="right"><span class="tip" data-tip="(適正価格 - 現在株価) / 適正価格 × 100&#10;プラス=割安, マイナス=割高">MOS</span></th>
+<th class="right"><span class="tip" data-tip="この銘柄の「本来の価値」の推定値。&#10;利益ベース(EPS×平均PER)と配当ベース(DPS÷平均利回り)を&#10;業種特性に応じてブレンドして算出">適正価格</span></th>
+<th class="right"><span class="tip" data-tip="安全余裕率 (Margin of Safety)。&#10;プラス=適正価格より安い(お買い得)&#10;マイナス=適正価格より高い(割高)&#10;20%以上が理想的な買い水準">MOS</span></th>
 <th class="right">利回り</th>
 <th class="center">監査</th><th>業種手法</th>
 </tr></thead><tbody>
@@ -410,8 +409,8 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <h3>バリュエーション詳細</h3>
 <table><thead><tr>
 <th>コード</th><th>銘柄</th>
-<th class="right"><span class="tip" data-tip="予想EPS × 参照PER">EPV</span></th>
-<th class="right"><span class="tip" data-tip="予想DPS / 参照利回り">DYV</span></th>
+<th class="right"><span class="tip" data-tip="収益力価値: 予想1株利益(EPS) × 平均PER&#10;「利益から見た適正価格」">EPV</span></th>
+<th class="right"><span class="tip" data-tip="配当利回り価値: 予想1株配当(DPS) ÷ 平均利回り&#10;「配当から見た適正価格」">DYV</span></th>
 <th class="right">適正価格</th>
 <th class="right"><span class="tip" data-tip="業種別加重: 銀行=trailing20%+3y45%+5y35%&#10;建設/景気敏感=trailing25%+3y35%+5y40%&#10;一般=trailing50%+3y35%+5y15%&#10;5-25x clamp">参照PER</span></th>
 <th class="right"><span class="tip" data-tip="3年平均利回り&#10;下限: 証券4% / 資源・商社3% / 一般2%&#10;上限: 8% (超過時clamp)">参照利回り</span></th>
@@ -1191,7 +1190,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>用語:</strong> <span style="color:#22c55e">BUY_NOW/BUY_SMALL</span>=購入推奨判定 / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=ゾーン価格条件の達成 (実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格+監査+DD全て充足 &nbsp;|&nbsp; <strong>次回検討候補</strong>=監査PASSだが価格/DD等の条件待ち</div>
 <div class="playbook-detail">
 <h2 style="display:flex;align-items:center;gap:10px">週次運用手順<span class="pb-phase" style="background:#f9731633;color:var(--orange);font-size:13px">DD8 是正</span></h2>
-<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-11 14:20)</div>
+<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-11 14:24)</div>
 <details open>
 <summary><span class="step-num">1</span>縮小検討を先に処理<span class="playbook-status s-alert">9件</span><input type="checkbox" class="playbook-check" data-step="1"></summary>
 <div class="step-content">
@@ -1214,7 +1213,7 @@ danger_flags時価: <strong>42.0%</strong> / 配当寄与: <strong>40.3%</strong
 <details>
 <summary><span class="step-num">3</span>集中度の悪化を止める<span class="playbook-status s-safe">Top3 29%</span><input type="checkbox" class="playbook-check" data-step="3"></summary>
 <div class="step-content">
-最大セクター: <strong>建設 35.0%</strong> / Top3: <strong>28.8%</strong> / 最大銘柄: <strong>1942 11.4%</strong>
+最大セクター: <strong>建設 35.0%</strong> / Top3: <strong>28.8%</strong>
 <ul>
 <li style="color:var(--orange);font-weight:700">建設 35.0% — これ以上増やさない。同セクター買い増し禁止。</li>
 <li>集中度はDD悪化の直接原因。セクター偏重と上位集中の両方を止める。</li>
