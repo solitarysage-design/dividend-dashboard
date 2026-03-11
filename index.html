@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dividend-toolkit Dashboard - 2026-03-11 14:17</title>
+<title>dividend-toolkit Dashboard - 2026-03-11 14:18</title>
 <style>
 :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
         --text2: #94a3b8; --accent: #38bdf8; --green: #22c55e; --yellow: #eab308;
         --orange: #f97316; --red: #ef4444; }
 * { margin:0; padding:0; box-sizing:border-box; }
+html { background:var(--bg); min-height:100%; }
 body { font-family: 'Inter','Segoe UI',system-ui,sans-serif; background:var(--bg);
-       color:var(--text); line-height:1.6; padding:20px; }
+       color:var(--text); line-height:1.6; padding:20px; min-height:100vh; }
 .container { max-width:1200px; margin:0 auto; }
 h1 { font-size:24px; margin-bottom:8px; color:#fff; }
 h2 { font-size:18px; margin:24px 0 12px; color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:6px; }
@@ -129,19 +130,15 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 .tab-btn .tab-count { display:inline-block; background:var(--border); color:var(--text2);
                       font-size:10px; padding:1px 6px; border-radius:10px; margin-left:4px; }
 .tab-btn.active .tab-count { background:var(--accent); color:var(--bg); }
-.tab-panel { display:none; padding-top:8px; max-height:calc(100vh - 120px); overflow-y:auto; }
+.tab-panel { display:none; padding-top:8px; }
 .tab-panel.active { display:block; }
-.tab-panel::-webkit-scrollbar { width:6px; }
-.tab-panel::-webkit-scrollbar-track { background:var(--bg); }
-.tab-panel::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
-.tab-panel::-webkit-scrollbar-thumb:hover { background:var(--text2); }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="container">
 <h1>dividend-toolkit Dashboard</h1>
-<div class="subtitle">2026-03-11 14:17 時点<span style="margin-left:12px;font-size:12px;padding:2px 10px;border-radius:4px;background:var(--card);border:1px solid var(--border)">日経RSI <strong style="color:var(--red)">72.3</strong> <span style="color:var(--red)">過熱</span></span></div>
+<div class="subtitle">2026-03-11 14:18 時点<span style="margin-left:12px;font-size:12px;padding:2px 10px;border-radius:4px;background:var(--card);border:1px solid var(--border)">日経RSI <strong style="color:var(--red)">72.3</strong> <span style="color:var(--red)">過熱</span></span></div>
 <div class="tab-nav">
 <button class="tab-btn active" data-tab="tab-guard" onclick="switchTab('tab-guard')">ガード <span class="tab-count">4</span></button>
 <button class="tab-btn" data-tab="tab-audit" onclick="switchTab('tab-audit')">監査 <span class="tab-count">21</span></button>
@@ -173,7 +170,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <tr style="border-top:1px solid var(--border)"><td style="padding:2px 8px;font-weight:700">→ 管理DD</td><td style="padding:2px 8px;font-weight:700" class="right neg">8.4%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">= max(実績, 集中リスク)</td></tr>
 <tr><td style="padding:2px 8px;color:var(--text2)">市場リスク (参考)</td><td style="padding:2px 8px" class="right">10.0%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">管理DD対象外</td></tr>
 </tbody></table>
-<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: ゴム &yen;35,742, 証券 &yen;62,160, 機械 &yen;70,980</div>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: 証券 &yen;62,160, ゴム &yen;35,742, 機械 &yen;70,980</div>
 <div style="font-size:11px;color:var(--text2)">補助要因: 景気敏感-15% 6.3%</div>
 <div style="font-size:11px;color:var(--text2);margin-top:4px">DDルール閾値: DD6=注意 / DD8=是正 / DD10=強制</div>
 <ul style="margin:6px 0 0 16px;font-size:12px;list-style:disc">
@@ -233,21 +230,21 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 </tbody></table>
 <h3>ストレス寄与 (セクター別)</h3>
 <table><thead><tr><th>シナリオ</th><th>セクター</th><th class="right">想定損失</th><th class="right">寄与率</th></tr></thead><tbody>
-<tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;52,739</td><td class="right">0.2%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>建設</td><td class="right neg">&yen;131,397</td><td class="right">0.6%</td></tr>
-<tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;53,488</td><td class="right">0.2%</td></tr>
+<tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;52,739</td><td class="right">0.2%</td></tr>
 <tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;491,765</td><td class="right">2.2%</td></tr>
 <tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;47,538</td><td class="right">0.2%</td></tr>
-<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;136,504</td><td class="right">0.6%</td></tr>
-<tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;99,406</td><td class="right">0.5%</td></tr>
+<tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;53,488</td><td class="right">0.2%</td></tr>
 <tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;32,930</td><td class="right">0.1%</td></tr>
+<tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;99,406</td><td class="right">0.5%</td></tr>
 <tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;24,088</td><td class="right">0.1%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,742</td><td class="right">0.2%</td></tr>
+<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;136,504</td><td class="right">0.6%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;62,160</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;35,742</td><td class="right">0.2%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;70,980</td><td class="right">0.3%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>食品</td><td class="right neg">&yen;24,746</td><td class="right">0.1%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;474,466</td><td class="right">2.1%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;61,593</td><td class="right">0.3%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>食品</td><td class="right neg">&yen;24,746</td><td class="right">0.1%</td></tr>
 </tbody></table>
 <h3>銘柄別詳細</h3>
 <table><thead><tr>
@@ -343,7 +340,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF/純利益 = 0.29 — 一過性利益疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 借入返済またはEBITDA増加, 営業CF改善または特別損益の説明確認</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 5161 西川ゴム工業</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS悪化中にDPS増加 — 配当性向悪化懸念</div>
@@ -351,7 +348,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> 配当性向 178.2% は危険水準 (&gt;=90.0%)</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS前年比 -21.5%</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPSが悪化しているにもかかわらずDPSが増加 — 持続性に疑問</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: EPS回復, 増益転換, 配当性向が70.0%未満に改善</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: EPS回復, 配当性向が70.0%未満に改善, 増益転換</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 8593 三菱ＨＣキャピタル</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
@@ -359,13 +356,13 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF: 直近3期中1期しかプラスでない</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> Net Debt/EBITDA 13.5x — 過剰債務</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF改善または特別損益の説明確認, 営業CF安定化</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 営業CF安定化, FCF黒字転換, 借入返済またはEBITDA増加</div>
 </div></div>
 <div class="tab-panel" id="tab-zone"><h2>買いゾーン判定 (buy_zone_engine)</h2>
-<div style="background:#ef444411;border:1px solid #ef444444;border-radius:8px;padding:14px 18px;margin-bottom:16px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div style="font-size:12px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">市場レジーム</div><span style="display:inline-block;padding:2px 12px;border-radius:4px;font-size:13px;font-weight:700;background:#ef444444;color:var(--red)">過熱</span><span style="font-size:13px;color:var(--text)">日経225 月足RSI = <strong>72.3</strong></span></div><div style="margin-top:10px;display:flex;align-items:center;gap:8px"><span style="font-size:10px;color:var(--text2)">0</span><div style="flex:1;height:8px;background:var(--border);border-radius:4px;position:relative;overflow:visible"><div style="position:absolute;left:40%;top:-2px;width:1px;height:12px;background:var(--green);opacity:0.4"></div><div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:var(--yellow);opacity:0.4"></div><div style="position:absolute;left:70%;top:-2px;width:1px;height:12px;background:var(--red);opacity:0.4"></div><div style="position:absolute;left:72.34%;top:-3px;width:14px;height:14px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 6px rgba(0,0,0,0.4);transform:translateX(-7px)"></div></div><span style="font-size:10px;color:var(--text2)">100</span></div><div style="display:flex;justify-content:space-between;margin-top:2px;font-size:9px;color:var(--text2);padding:0 20px"><span style="position:relative;left:30%">40</span><span style="position:relative;left:5%">50</span><span style="position:relative;left:-15%">70</span></div><div style="margin-top:6px;font-size:12px;color:var(--red)">市場は過熱気味 — 新規買いは慎重に</div>
+<div style="background:#ef444411;border:1px solid #ef444444;border-radius:8px;padding:14px 18px;margin-bottom:16px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div style="font-size:12px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">市場レジーム</div><span style="display:inline-block;padding:2px 12px;border-radius:4px;font-size:13px;font-weight:700;background:#ef444444;color:var(--red)">過熱</span><span style="font-size:13px;color:var(--text)">日経225 月足RSI = <strong>72.3</strong></span></div><div style="margin-top:10px;display:flex;align-items:center;gap:8px"><span style="font-size:10px;color:var(--text2)">0</span><div style="flex:1;height:8px;background:var(--border);border-radius:4px;position:relative;overflow:visible"><div style="position:absolute;left:40%;top:-2px;width:1px;height:12px;background:var(--green);opacity:0.4"></div><div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:var(--yellow);opacity:0.4"></div><div style="position:absolute;left:70%;top:-2px;width:1px;height:12px;background:var(--red);opacity:0.4"></div><div style="position:absolute;left:72.26%;top:-3px;width:14px;height:14px;border-radius:50%;background:var(--red);border:2px solid #fff;box-shadow:0 0 6px rgba(0,0,0,0.4);transform:translateX(-7px)"></div></div><span style="font-size:10px;color:var(--text2)">100</span></div><div style="display:flex;justify-content:space-between;margin-top:2px;font-size:9px;color:var(--text2);padding:0 20px"><span style="position:relative;left:30%">40</span><span style="position:relative;left:5%">50</span><span style="position:relative;left:-15%">70</span></div><div style="margin-top:6px;font-size:12px;color:var(--red)">市場は過熱気味 — 新規買いは慎重に</div>
 <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)"><div style="font-size:11px;color:var(--text2);font-weight:600;margin-bottom:6px">月足移動平均線</div><div style="display:flex;gap:16px;flex-wrap:wrap">
-<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">中期線 (12MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+18.3%</span></div>
-<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">長期線 (24MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+30.1%</span></div>
+<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">中期線 (12MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+18.2%</span></div>
+<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:transparent;font-size:12px"><span style="color:var(--text2);font-weight:700">△</span><span style="color:var(--text)">長期線 (24MA)</span><span style="color:var(--text2);font-weight:700">上方</span><span style="color:var(--text2);font-size:11px">+30.0%</span></div>
 </div></div>
 </div>
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>判定凡例:</strong> <span style="color:#22c55e">BUY_NOW</span>=即時買い推奨 / <span style="color:#86efac">BUY_SMALL</span>=小ロットで打診買い / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=株価がゾーン上限以下 (価格条件の達成であり実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格到達 + 判定BUY + 監査OK + DD余裕 すべて充足</div>
@@ -1189,7 +1186,7 @@ footer { text-align:center; color:var(--text2); font-size:11px; margin-top:32px;
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>用語:</strong> <span style="color:#22c55e">BUY_NOW/BUY_SMALL</span>=購入推奨判定 / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=ゾーン価格条件の達成 (実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格+監査+DD全て充足 &nbsp;|&nbsp; <strong>次回検討候補</strong>=監査PASSだが価格/DD等の条件待ち</div>
 <div class="playbook-detail">
 <h2 style="display:flex;align-items:center;gap:10px">週次運用手順<span class="pb-phase" style="background:#f9731633;color:var(--orange);font-size:13px">DD8 是正</span></h2>
-<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-11 14:17)</div>
+<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-11 14:18)</div>
 <details open>
 <summary><span class="step-num">1</span>縮小検討を先に処理<span class="playbook-status s-alert">9件</span><input type="checkbox" class="playbook-check" data-step="1"></summary>
 <div class="step-content">
