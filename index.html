@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dividend-toolkit Dashboard - 2026-03-16 20:21</title>
+<title>dividend-toolkit Dashboard - 2026-03-16 22:31</title>
 <style>
 :root { --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #e2e8f0;
         --text2: #94a3b8; --accent: #38bdf8; --green: #22c55e; --yellow: #eab308;
@@ -235,7 +235,7 @@ canvas { display:none !important; }
 <body>
 <div class="container">
 <h1>dividend-toolkit Dashboard</h1>
-<div class="subtitle">2026-03-16 20:21 時点<span style="margin-left:12px;font-size:12px;padding:2px 10px;border-radius:4px;background:var(--card);border:1px solid var(--border)">日経RSI <strong style="color:var(--text2)">68.1</strong> <span style="color:var(--text2)">通常</span></span></div>
+<div class="subtitle">2026-03-16 22:31 時点<span style="margin-left:12px;font-size:12px;padding:2px 10px;border-radius:4px;background:var(--card);border:1px solid var(--border)">日経RSI <strong style="color:var(--text2)">68.1</strong> <span style="color:var(--text2)">通常</span></span></div>
 <div class="tab-nav">
 <button class="tab-btn active" data-tab="tab-guard" onclick="switchTab('tab-guard')">ガード <span class="tab-count">2</span></button>
 <button class="tab-btn" data-tab="tab-audit" onclick="switchTab('tab-audit')">監査 <span class="tab-count">22</span></button>
@@ -251,6 +251,12 @@ canvas { display:none !important; }
 <div class="tab-panel active" id="tab-guard"><h2>ポートフォリオガード (portfolio_guard)</h2>
 <div style="margin-bottom:16px;padding:14px 18px;border-radius:8px;background:#eab30822;border:1px solid #eab30844"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:14px;font-weight:700;color:#eab308">DD6警戒</span><span style="font-size:12px;color:var(--text)">管理DD 6.8%; アラート 2件</span></div></div>
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>執行状態:</strong> <span style="color:#ef4444">BLOCKED(DD10強制)</span>=新規買い全面停止 / <span style="color:#f97316">RESTRICTED(DD8是正)</span>=原則停止・例外のみ / <span style="color:#eab308">REVIEW(DD6警戒)</span>=厳選のみ / <span style="color:#22c55e">EXECUTABLE(通常運用)</span>=通常運用</div>
+<div style="margin-bottom:16px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:8px">
+<div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:10px">今週の最優先3件</div>
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;font-size:13px"><span style="font-weight:700;color:var(--red);min-width:20px">1.</span><span style="font-weight:700">1928</span><span>積水ハウス</span><span style="color:var(--red);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--red)22">リスク監視</span><span style="color:var(--text2);font-size:11px">DD寄与・danger依存 (比率5.2%)</span><span style="font-weight:600;font-size:11px">→ 監査確認・縮小検討</span></div>
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;font-size:13px"><span style="font-weight:700;color:var(--yellow);min-width:20px">2.</span><span style="font-weight:700">1414</span><span>SHO-BOND Holdings Co.,Ltd.</span><span style="color:var(--yellow);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--yellow)22">価格到達・制約あり</span><span style="color:var(--text2);font-size:11px">② 標準買い / MOS +18.9%</span><span style="font-weight:600;font-size:11px">→ 制約解除待ち・監視継続</span></div>
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px;font-size:13px"><span style="font-weight:700;color:var(--orange);min-width:20px">3.</span><span style="font-weight:700">1414</span><span></span><span style="color:var(--orange);font-size:11px;padding:1px 6px;border-radius:3px;background:var(--orange)22">監査要確認</span><span style="color:var(--text2);font-size:11px">WATCH銘柄の再監査</span><span style="font-weight:600;font-size:11px">→ 決算・開示確認</span></div>
+</div>
 <div class="cards">
 <div class="card"><div class="label">時価総額</div><div class="value">&yen;20,484,350</div></div>
 <div class="card"><div class="label">含み損益</div><div class="value pos">&yen;+3,265,665</div><div class="sub">+18.97%</div></div>
@@ -262,26 +268,9 @@ canvas { display:none !important; }
 <div class="card"><div class="label"><span class="tip" data-tip="管理DD = max(実績DD, 集中リスクDD)。&#10;DDルール (DD6注意/DD8是正/DD10強制) はこの値で判定。&#10;PF全体シナリオは市場リスクのため管理DD対象外。">管理DD</span></div><div class="value warn">6.8%</div><div class="sub">DD6 注意</div><div class="sub" style="font-size:10px">主因: 危険フラグ銘柄-20</div></div>
 <div class="card"><div class="label"><span class="tip" data-tip="PF全体が一律下落するシナリオ。&#10;分散では回避できない市場リスク。&#10;管理DDには加算しない (参考値)。">市場リスク(参考)</span></div><div class="value">10.0%</div><div class="sub">PF全体下落時</div></div>
 </div>
-<div style="margin:12px 0;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px">
-<div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px">前回からの主な変化 (2026-03-09 10:00)</div>
-<table style="margin:8px 0;font-size:12px;width:auto;min-width:400px"><thead><tr><th style="text-align:left">指標</th><th class="right">現在</th><th class="right">前回</th><th class="right">変化</th></tr></thead><tbody>
-<tr><td>danger時価比率</td><td class="right">33.7%</td><td class="right" style="color:var(--text2)">30.0%</td><td class="right"><span style="color:var(--red)">+3.7pt</span></td></tr>
-<tr><td>danger配当寄与</td><td class="right">34.1%</td><td class="right" style="color:var(--text2)">31.0%</td><td class="right"><span style="color:var(--red)">+3.1pt</span></td></tr>
-<tr><td>最大セクター比率</td><td class="right">29.9%</td><td class="right" style="color:var(--text2)">29.8%</td><td class="right"><span style="color:var(--red)">+0.1pt</span></td></tr>
-<tr><td>Top3集中度</td><td class="right">26.9%</td><td class="right" style="color:var(--text2)">25.0%</td><td class="right"><span style="color:var(--red)">+1.9pt</span></td></tr>
-<tr><td>Top5集中度</td><td class="right">42.0%</td><td class="right" style="color:var(--text2)">42.0%</td><td class="right"><span style="color:var(--text2)">±0pt</span></td></tr>
-<tr><td>管理DD</td><td class="right">6.8%</td><td class="right" style="color:var(--text2)">5.0%</td><td class="right"><span style="color:var(--red)">+1.8pt</span></td></tr>
-</tbody></table>
-<ul style="margin:8px 0 0 16px;font-size:12px;list-style:disc">
-<li>管理DD: 5.0% → 6.8% (+1.8pt)</li>
-<li>買い増し候補 新規: 1605, 7453, 7867</li>
-<li>買い増し候補 除外: 9433</li>
-<li>danger時価: 30.0% → 33.7% (+3.7pt)</li>
-<li>danger配当寄与: 31.0% → 34.1% (+3.1pt)</li>
-<li>Top3集中度: 25.0% → 26.9% (+1.9pt)</li>
-</ul>
-</div>
+<div style="margin:12px 0;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:6px;font-size:12px;color:var(--text2)">前回 (2026-03-16 20:21) から変化なし</div>
 <div style="font-size:11px;color:var(--text2);margin:-4px 0 8px 4px">口座別配当: NISA: &yen;0 / 特定: &yen;663,256 (NISA分は非課税)</div>
+<div style="font-size:12px;color:var(--text2);margin:-4px 0 8px 4px;padding:6px 10px;background:#eab30811;border:1px solid #eab30844;border-radius:4px">目標まであと &yen;3,471,484/年 (&yen;289,290/月)</div>
 <div style="font-size:11px;color:var(--text2);margin:-4px 0 8px 4px">相関分散比率: <span class="pos">0.86</span></div>
 <div style="font-size:11px;color:var(--orange);margin:-4px 0 4px 4px">⚠ セクター「建設」に4銘柄集中 — 同一セクター内の相関リスクに注意 (1414, 1928, 1950, 5915)</div>
 <div class="action-box action-warn"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><strong>管理DD 6.8%</strong> — <span style="font-size:13px">DD6 注意</span></div><div style="font-size:12px">主因: 集中リスク (危険フラグ銘柄-20% 6.8%)</div></div>
@@ -291,7 +280,7 @@ canvas { display:none !important; }
 <tr style="border-top:1px solid var(--border)"><td style="padding:2px 8px;font-weight:700">→ 管理DD</td><td style="padding:2px 8px;font-weight:700" class="right warn">6.8%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">= max(実績, 集中リスク)</td></tr>
 <tr><td style="padding:2px 8px;color:var(--text2)">市場リスク (参考)</td><td style="padding:2px 8px" class="right">10.0%</td><td style="padding:2px 8px;font-size:11px;color:var(--text2)">管理DD対象外</td></tr>
 </tbody></table>
-<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: 機械 &yen;53,055, 電気・ガス &yen;22,646, 商社 &yen;42,916</div>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">主寄与: ゴム &yen;26,932, 建設 &yen;205,929, その他金融 &yen;47,571</div>
 <div style="font-size:11px;color:var(--text2)">補助要因: 景気敏感-15% 5.6%</div>
 <div style="font-size:11px;color:var(--text2);margin-top:4px">DDルール閾値: DD6=注意 / DD8=是正 / DD10=強制</div>
 <ul style="margin:6px 0 0 16px;font-size:12px;list-style:disc">
@@ -320,6 +309,18 @@ canvas { display:none !important; }
 <div class="alert-box"><div class="title">[ALERT] 監査品質 (危険フラグ時価比率)</div><div class="msg">danger_flags銘柄が時価の 33.7% — 危険銘柄への時価集中</div></div>
 <div class="alert-box"><div class="title">[ALERT] 監査品質 (危険フラグ配当寄与)</div><div class="msg">danger_flags銘柄の配当寄与 34.1% — 配当収入が危険銘柄に依存</div></div>
 <div class="alert-box" style="border-color:#f9731666;background:#f9731611"><div class="title" style="color:var(--orange)">配当リスク</div><div class="msg">ALERT/FAIL・危険フラグ銘柄の年間配当: &yen;226,400 (全体の 34.1%)</div></div>
+<h4 style="margin-top:12px">danger銘柄 解消条件</h4>
+<table><thead><tr><th>コード</th><th>銘柄</th><th class="right">時価比率</th><th class="right">配当寄与</th><th>解消条件</th></tr></thead><tbody>
+<tr><td><strong>1950</strong></td><td>日本電設工業</td><td class="right">9.7%</td><td class="right">6.9%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="right">5.2%</td><td class="right">6.6%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>6209</strong></td><td>リケンＮＰＲ</td><td class="right">3.8%</td><td class="right">5.0%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>8593</strong></td><td>三菱ＨＣキャピタル</td><td class="right">3.4%</td><td class="right">3.5%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>8707</strong></td><td>岩井コスモホールディング</td><td class="right">3.4%</td><td class="right">5.6%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>2768</strong></td><td>双日</td><td class="right">3.1%</td><td class="right">2.5%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>5161</strong></td><td>西川ゴム工業</td><td class="right">1.9%</td><td class="right">2.7%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>5074</strong></td><td>テスホールディングス</td><td class="right">1.6%</td><td class="right">0.4%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+<tr><td><strong>3543</strong></td><td>コメダホールディングス</td><td class="right">1.4%</td><td class="right">0.9%</td><td style="font-size:11px">監査改善(PASS化)</td></tr>
+</tbody></table>
 <h3>集中度</h3>
 <div class="cards">
 <div class="card"><div class="label">Top3集中度</div><div class="value">26.9%</div></div>
@@ -327,15 +328,15 @@ canvas { display:none !important; }
 <div class="card"><div class="label">最大セクター</div><div class="value">建設</div><div class="sub">29.9%</div></div>
 </div>
 <h3>DD寄与分析 (含み損銘柄)</h3>
-<table><thead><tr><th>コード</th><th>銘柄</th><th class="right">含み損益</th><th class="right">含み損益率</th><th class="right">DD寄与</th></tr></thead><tbody>
-<tr><td><strong>7867</strong></td><td>タカラトミー</td><td class="right neg">&yen;-311,800</td><td class="right neg">-36.1%</td><td class="right">52.1%</td></tr>
-<tr><td><strong>8766</strong></td><td>東京海上ＨＤ</td><td class="right neg">&yen;-96,099</td><td class="right neg">-5.2%</td><td class="right">16.1%</td></tr>
-<tr><td><strong>1950</strong></td><td>日本電設工業</td><td class="right neg">&yen;-81,000</td><td class="right neg">-3.9%</td><td class="right">13.5%</td></tr>
-<tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="right neg">&yen;-61,992</td><td class="right neg">-3.6%</td><td class="right">10.4%</td></tr>
-<tr><td><strong>5915</strong></td><td>駒井ハルテック</td><td class="right neg">&yen;-25,095</td><td class="right neg">-1.8%</td><td class="right">4.2%</td></tr>
-<tr><td><strong>3543</strong></td><td>コメダホールディングス</td><td class="right neg">&yen;-17,900</td><td class="right neg">-5.7%</td><td class="right">3.0%</td></tr>
-<tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="right neg">&yen;-4,200</td><td class="right neg">-0.4%</td><td class="right">0.7%</td></tr>
-<tr><td><strong>5074</strong></td><td>テスホールディングス</td><td class="right neg">&yen;-200</td><td class="right neg">-0.1%</td><td class="right">0.0%</td></tr>
+<table><thead><tr><th>コード</th><th>銘柄</th><th class="right">含み損益</th><th class="right">含み損益率</th><th class="right">DD寄与</th><th class="center">対処</th></tr></thead><tbody>
+<tr><td><strong>7867</strong></td><td>タカラトミー</td><td class="right neg">&yen;-311,800</td><td class="right neg">-36.1%</td><td class="right">52.1%</td><td class="center" style="color:var(--orange);font-size:11px;font-weight:600">大幅含み損</td></tr>
+<tr><td><strong>8766</strong></td><td>東京海上ＨＤ</td><td class="right neg">&yen;-96,099</td><td class="right neg">-5.2%</td><td class="right">16.1%</td><td class="center" style="color:var(--text2);font-size:11px;font-weight:600">監視</td></tr>
+<tr><td><strong>1950</strong></td><td>日本電設工業</td><td class="right neg">&yen;-81,000</td><td class="right neg">-3.9%</td><td class="right">13.5%</td><td class="center" style="color:var(--orange);font-size:11px;font-weight:600">監査注意</td></tr>
+<tr><td><strong>1414</strong></td><td>ショーボンドＨＤ</td><td class="right neg">&yen;-61,992</td><td class="right neg">-3.6%</td><td class="right">10.4%</td><td class="center" style="color:var(--text2);font-size:11px;font-weight:600">監視</td></tr>
+<tr><td><strong>5915</strong></td><td>駒井ハルテック</td><td class="right neg">&yen;-25,095</td><td class="right neg">-1.8%</td><td class="right">4.2%</td><td class="center" style="color:var(--text2);font-size:11px;font-weight:600">監視</td></tr>
+<tr><td><strong>3543</strong></td><td>コメダホールディングス</td><td class="right neg">&yen;-17,900</td><td class="right neg">-5.7%</td><td class="right">3.0%</td><td class="center" style="color:var(--orange);font-size:11px;font-weight:600">監査注意</td></tr>
+<tr><td><strong>1928</strong></td><td>積水ハウス</td><td class="right neg">&yen;-4,200</td><td class="right neg">-0.4%</td><td class="right">0.7%</td><td class="center" style="color:var(--red);font-size:11px;font-weight:600">要是正</td></tr>
+<tr><td><strong>5074</strong></td><td>テスホールディングス</td><td class="right neg">&yen;-200</td><td class="right neg">-0.1%</td><td class="right">0.0%</td><td class="center" style="color:var(--red);font-size:11px;font-weight:600">要是正</td></tr>
 </tbody></table>
 <h3>個別銘柄ドローダウン (含み損-10%超)</h3>
 <div class="alert-box"><div class="title">7867 タカラトミー: -36.1%</div><div class="msg">含み損益 &yen;-311,800 / 取得 &yen;4,317 → 現在 &yen;2,758</div></div>
@@ -354,18 +355,18 @@ canvas { display:none !important; }
 <tr><td>上位3銘柄-10%</td><td>建設</td><td class="right neg">&yen;53,531</td><td class="right">0.3%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>保険</td><td class="right neg">&yen;47,581</td><td class="right">0.2%</td></tr>
 <tr><td>上位3銘柄-10%</td><td>資源</td><td class="right neg">&yen;47,021</td><td class="right">0.2%</td></tr>
+<tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;41,290</td><td class="right">0.2%</td></tr>
 <tr><td>景気敏感-15%</td><td>建設</td><td class="right neg">&yen;344,230</td><td class="right">1.7%</td></tr>
 <tr><td>景気敏感-15%</td><td>機械</td><td class="right neg">&yen;44,095</td><td class="right">0.2%</td></tr>
-<tr><td>景気敏感-15%</td><td>化学</td><td class="right neg">&yen;41,290</td><td class="right">0.2%</td></tr>
-<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;136,784</td><td class="right">0.7%</td></tr>
-<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;23,470</td><td class="right">0.1%</td></tr>
-<tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;32,479</td><td class="right">0.2%</td></tr>
 <tr><td>金融-15%</td><td>その他金融</td><td class="right neg">&yen;98,491</td><td class="right">0.5%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;53,055</td><td class="right">0.3%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>電気・ガス</td><td class="right neg">&yen;22,646</td><td class="right">0.1%</td></tr>
-<tr><td>危険フラグ銘柄-20%</td><td>商社</td><td class="right neg">&yen;42,916</td><td class="right">0.2%</td></tr>
+<tr><td>金融-15%</td><td>銀行</td><td class="right neg">&yen;23,470</td><td class="right">0.1%</td></tr>
+<tr><td>金融-15%</td><td>保険</td><td class="right neg">&yen;136,784</td><td class="right">0.7%</td></tr>
+<tr><td>金融-15%</td><td>証券</td><td class="right neg">&yen;32,479</td><td class="right">0.2%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>ゴム</td><td class="right neg">&yen;26,932</td><td class="right">0.1%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>建設</td><td class="right neg">&yen;205,929</td><td class="right">1.0%</td></tr>
 <tr><td>危険フラグ銘柄-20%</td><td>その他金融</td><td class="right neg">&yen;47,571</td><td class="right">0.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>証券</td><td class="right neg">&yen;47,452</td><td class="right">0.2%</td></tr>
+<tr><td>危険フラグ銘柄-20%</td><td>機械</td><td class="right neg">&yen;53,055</td><td class="right">0.3%</td></tr>
 </tbody></table>
 <h3>銘柄別詳細</h3>
 <table><thead><tr>
@@ -463,7 +464,7 @@ canvas { display:none !important; }
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF/純利益 = 0.29 — 一過性利益疑い</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加, FCF黒字転換</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#ef4444;color:#fff;font-weight:700;font-size:13px">FAIL</span> 5074 テスホールディングス</div><div class="msg">重大な懸念あり。減配リスクが高い。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> FCF2期連続赤字 — 借入配当の疑い</div>
@@ -471,7 +472,7 @@ canvas { display:none !important; }
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> 配当性向 200.5% は危険水準 (&gt;=90.0%)</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS前年比 -82.8%</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> DPS前年比 -69.5% — 減配</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 借入返済またはEBITDA増加, DPSの安定推移, 増配再開</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 配当性向が70.0%未満に改善, DPSの安定推移, FCF黒字転換</div>
 </div>
 <div class="alert-box"><div class="title"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#f97316;color:#fff;font-weight:700;font-size:13px">ALERT</span> 5161 西川ゴム工業</div><div class="msg">複数の警戒シグナルあり。新規購入は慎重に。 危険フラグ: 2件</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> EPS悪化中にDPS増加 — 配当性向悪化懸念</div>
@@ -487,7 +488,7 @@ canvas { display:none !important; }
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#f97316">●</span> 営業CF: 直近3期中1期しかプラスでない</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> Net Debt/EBITDA 13.5x — 過剰債務</div>
 <div style="margin:4px 0 0 12px;font-size:12px"><span style="color:#ef4444">●</span> FCFが2期連続赤字 — 借入で配当維持の疑い</div>
-<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: 営業CF安定化, FCF黒字転換, 営業CF改善または特別損益の説明確認</div>
+<div style="margin:6px 0 0 12px;font-size:11px;color:var(--green)">改善条件: FCF黒字転換, 営業CF改善または特別損益の説明確認, 借入返済またはEBITDA増加</div>
 </div></div>
 <div class="tab-panel" id="tab-zone"><h2>買いゾーン判定 (buy_zone_engine)</h2>
 <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:16px"><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><div style="font-size:12px;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:0.5px">市場レジーム</div><span style="display:inline-block;padding:2px 12px;border-radius:4px;font-size:13px;font-weight:700;background:var(--border);color:var(--text2)">通常</span><span style="font-size:13px;color:var(--text)">日経225 月足RSI = <strong>68.1</strong></span></div><div style="margin-top:10px;display:flex;align-items:center;gap:8px"><span style="font-size:10px;color:var(--text2)">0</span><div style="flex:1;height:8px;background:var(--border);border-radius:4px;position:relative;overflow:visible"><div style="position:absolute;left:40%;top:-2px;width:1px;height:12px;background:var(--green);opacity:0.4"></div><div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:var(--yellow);opacity:0.4"></div><div style="position:absolute;left:70%;top:-2px;width:1px;height:12px;background:var(--red);opacity:0.4"></div><div style="position:absolute;left:68.08%;top:-3px;width:14px;height:14px;border-radius:50%;background:var(--yellow);border:2px solid #fff;box-shadow:0 0 6px rgba(0,0,0,0.4);transform:translateX(-7px)"></div></div><span style="font-size:10px;color:var(--text2)">100</span></div><div style="display:flex;justify-content:space-between;margin-top:2px;font-size:9px;color:var(--text2);padding:0 20px"><span style="position:relative;left:30%">40</span><span style="position:relative;left:5%">50</span><span style="position:relative;left:-15%">70</span></div><div style="margin-top:6px;font-size:12px;color:var(--text2)">市場は通常レンジ</div><div style="margin-top:4px;font-size:11px;color:var(--text2)">📊 判定スコアへの加減点なし。ファンダメンタルズのみで判定</div>
@@ -1206,7 +1207,7 @@ canvas { display:none !important; }
 <div class="card"><div class="label">比較セクター数</div><div class="value">16</div></div>
 <div class="card"><div class="label">プライムピア</div><div class="value">81</div><div class="sub">セクター上位銘柄</div></div>
 </div>
-<h3>建設 <span style="font-size:12px;color:var(--text2)">保有 4 / ピア 3 / 中央値: 利回りN/A PER 15.5x PBR 1.30x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>建設 <span style="font-size:12px;color:var(--text2)">保有 4 / ピア 3 / 中央値: 利回りN/A PER 15.5x PBR 1.30x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1225,7 +1226,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>1808</strong></td><td>長谷工コーポレーション</td><td class="right na">N/A</td><td class="right">20.2x</td><td class="right">1.30x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>1980</strong></td><td>ダイダン</td><td class="right na">N/A</td><td class="right">15.5x</td><td class="right">2.53x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>その他金融 <span style="font-size:12px;color:var(--text2)">保有 2 / ピア 5 / 中央値: 利回り3.27% PER 13.5x PBR 1.82x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (90%)</span></h3>
+<h3>その他金融 <span style="font-size:12px;color:var(--text2)">保有 2 / ピア 5 / 中央値: 利回り3.27% PER 13.5x PBR 1.82x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (90%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <div style="font-size:11px;color:var(--orange);margin-bottom:8px;padding:6px 10px;background:#f9731611;border:1px solid #f9731644;border-radius:4px">金融セクターはBIS規制比率・ソルベンシーマージン等の専用指標が未実装のため簡易比較です。PER/PBR/利回りは参考値としてご利用ください。</div>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
@@ -1245,7 +1246,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8697</strong></td><td>日本取引所グループ</td><td class="right ">2.70%</td><td class="right">30.3x</td><td class="right">5.94x</td><td class="right neg">-4.2%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>7187</strong></td><td>ジェイリース</td><td class="right na">N/A</td><td class="right">14.0x</td><td class="right">4.98x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>保険 <span style="font-size:12px;color:var(--text2)">保有 2 / ピア 5 / 中央値: 利回り2.70% PER 12.7x PBR 1.10x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (95%)</span></h3>
+<h3>保険 <span style="font-size:12px;color:var(--text2)">保有 2 / ピア 5 / 中央値: 利回り2.70% PER 12.7x PBR 1.10x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (95%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <div style="font-size:11px;color:var(--orange);margin-bottom:8px;padding:6px 10px;background:#f9731611;border:1px solid #f9731644;border-radius:4px">金融セクターはBIS規制比率・ソルベンシーマージン等の専用指標が未実装のため簡易比較です。PER/PBR/利回りは参考値としてご利用ください。</div>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
@@ -1265,7 +1266,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>7181</strong></td><td>かんぽ生命保険</td><td class="right ">2.70%</td><td class="right">11.3x</td><td class="right">0.41x</td><td class="right neg">-4.0%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8729</strong></td><td>ソニーフィナンシャルグループ</td><td class="right ">2.56%</td><td class="right">0.8x</td><td class="right">1.53x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>商社 <span style="font-size:12px;color:var(--text2)">保有 2 / ピア 5 / 中央値: 利回りN/A PER 11.2x PBR 1.27x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>商社 <span style="font-size:12px;color:var(--text2)">保有 2 / ピア 5 / 中央値: 利回りN/A PER 11.2x PBR 1.27x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1284,7 +1285,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8053</strong></td><td>住友商事</td><td class="right na">N/A</td><td class="right">9.3x</td><td class="right">1.13x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>7552</strong></td><td>ハピネット</td><td class="right na">N/A</td><td class="right">21.1x</td><td class="right">2.57x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>その他製造 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り1.31% PER 22.8x PBR 1.18x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (67%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>その他製造 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り1.31% PER 22.8x PBR 1.18x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (67%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1303,7 +1304,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>7976</strong></td><td>三菱鉛筆</td><td class="right na">N/A</td><td class="right">10.6x</td><td class="right">0.94x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>7962</strong></td><td>キングジム</td><td class="right na">N/A</td><td class="right">56.3x</td><td class="right">1.00x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>ゴム <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り3.59% PER 9.8x PBR 1.00x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (100%)</span></h3>
+<h3>ゴム <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り3.59% PER 9.8x PBR 1.00x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (100%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1322,7 +1323,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>5186</strong></td><td>ニッタ</td><td class="right pos">3.32%</td><td class="right">10.4x</td><td class="right">0.76x</td><td class="right pos">+0.6%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>5191</strong></td><td>住友理工</td><td class="right ">0.03%</td><td class="right">9.3x</td><td class="right">1.21x</td><td class="right pos">+37.2%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px">増配CAGR +37.2%</td></tr>
 </tbody></table>
-<h3>パルプ・紙 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り2.97% PER 12.4x PBR 0.72x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (88%)</span></h3>
+<h3>パルプ・紙 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り2.97% PER 12.4x PBR 0.72x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (88%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1341,7 +1342,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>3865</strong></td><td>北越コーポレーション</td><td class="right na">N/A</td><td class="right">11.3x</td><td class="right">0.66x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>3880</strong></td><td>大王製紙</td><td class="right ">1.27%</td><td class="right">—</td><td class="right">0.76x</td><td class="right neg">-14.7%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>化学 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回りN/A PER 14.2x PBR 0.91x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>化学 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回りN/A PER 14.2x PBR 0.91x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1360,7 +1361,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>4275</strong></td><td>カーリット</td><td class="right na">N/A</td><td class="right">12.6x</td><td class="right">0.86x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>4958</strong></td><td>長谷川香料</td><td class="right na">N/A</td><td class="right">17.5x</td><td class="right">0.98x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>小売 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回りN/A PER 31.3x PBR 1.39x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>小売 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回りN/A PER 31.3x PBR 1.39x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1379,7 +1380,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>9861</strong></td><td>吉野家ホールディングス</td><td class="right na">N/A</td><td class="right">52.1x</td><td class="right">3.09x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>3341</strong></td><td>日本調剤</td><td class="right na">N/A</td><td class="right">84.0x</td><td class="right">1.98x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>機械 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回りN/A PER 12.9x PBR 1.64x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>機械 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回りN/A PER 12.9x PBR 1.64x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (50%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1398,7 +1399,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>6417</strong></td><td>ＳＡＮＫＹＯ</td><td class="right na">N/A</td><td class="right">12.1x</td><td class="right">2.32x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>6586</strong></td><td>マキタ</td><td class="right na">N/A</td><td class="right">17.1x</td><td class="right">1.47x</td><td class="right na">N/A</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>証券 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り4.15% PER 13.2x PBR 1.15x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (92%)</span></h3>
+<h3>証券 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り4.15% PER 13.2x PBR 1.15x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (92%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <div style="font-size:11px;color:var(--orange);margin-bottom:8px;padding:6px 10px;background:#f9731611;border:1px solid #f9731644;border-radius:4px">金融セクターはBIS規制比率・ソルベンシーマージン等の専用指標が未実装のため簡易比較です。PER/PBR/利回りは参考値としてご利用ください。</div>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
@@ -1418,7 +1419,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8601</strong></td><td>大和証券グループ本社</td><td class="right pos">4.04%</td><td class="right">13.2x</td><td class="right">1.16x</td><td class="right neg">-4.2%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8628</strong></td><td>松井証券</td><td class="right pos">5.34%</td><td class="right">22.1x</td><td class="right">3.11x</td><td class="right neg">-9.0%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>資源 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 3 / 中央値: 利回り1.56% PER 17.3x PBR 1.37x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (100%)</span></h3>
+<h3>資源 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 3 / 中央値: 利回り1.56% PER 17.3x PBR 1.37x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (100%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1434,7 +1435,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>1515</strong></td><td>日鉄鉱業</td><td class="right ">2.01%</td><td class="right">22.8x</td><td class="right">1.48x</td><td class="right pos">+21.1%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px">増配CAGR +21.1%</td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>1663</strong></td><td>Ｋ＆Ｏエナジーグループ</td><td class="right ">1.09%</td><td class="right">17.3x</td><td class="right">1.37x</td><td class="right pos">+12.5%</td><td class="center"><span style="display:inline-block;padding:2px 10px;border-radius:4px;background:#22c55e;color:#fff;font-weight:700;font-size:13px">OK</span></td><td class="center"></td><td style="font-size:12px">5年無減配 / 増配CAGR +12.5%</td></tr>
 </tbody></table>
-<h3>銀行 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り2.65% PER 16.0x PBR 1.25x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (96%)</span></h3>
+<h3>銀行 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り2.65% PER 16.0x PBR 1.25x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (96%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <div style="font-size:11px;color:var(--orange);margin-bottom:8px;padding:6px 10px;background:#f9731611;border:1px solid #f9731644;border-radius:4px">金融セクターはBIS規制比率・ソルベンシーマージン等の専用指標が未実装のため簡易比較です。PER/PBR/利回りは参考値としてご利用ください。</div>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
@@ -1454,7 +1455,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8411</strong></td><td>みずほフィナンシャルグループ</td><td class="right ">2.36%</td><td class="right">14.5x</td><td class="right">1.35x</td><td class="right neg">-0.7%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>8308</strong></td><td>りそなホールディングス</td><td class="right ">1.66%</td><td class="right">16.4x</td><td class="right">1.35x</td><td class="right neg">-7.1%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>陸運 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り1.71% PER 11.9x PBR 1.25x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (92%)</span></h3>
+<h3>陸運 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り1.71% PER 11.9x PBR 1.25x</span><span style="color:#22c55e;font-size:11px;margin-left:8px">比較精度: High (92%) <span style="font-size:10px;color:var(--text2)">(投資判断に使用可)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1473,7 +1474,7 @@ canvas { display:none !important; }
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>9022</strong></td><td>東海旅客鉄道</td><td class="right ">0.76%</td><td class="right">8.0x</td><td class="right">0.82x</td><td class="right neg">-9.2%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 <tr><td class="center"><span style="font-size:11px;color:var(--text2)">Prime</span></td><td><strong>9024</strong></td><td>西武ホールディングス</td><td class="right ">0.96%</td><td class="right">5.8x</td><td class="right">1.96x</td><td class="right neg">-6.5%</td><td class="center"><span class="na">-</span></td><td class="center"></td><td style="font-size:12px"></td></tr>
 </tbody></table>
-<h3>食品 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り4.24% PER 18.9x PBR 1.58x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (58%) (利回り欠損多、CAGR欠損多)</span></h3>
+<h3>食品 <span style="font-size:12px;color:var(--text2)">保有 1 / ピア 6 / 中央値: 利回り4.24% PER 18.9x PBR 1.58x</span><span style="color:#eab308;font-size:11px;margin-left:8px">比較精度: Medium (58%) (利回り欠損多、CAGR欠損多) <span style="font-size:10px;color:var(--text2)">(補助的に使用)</span></span></h3>
 <table><thead><tr>
 <th></th><th>コード</th><th>銘柄</th>
 <th class="right">利回り</th>
@@ -1497,7 +1498,7 @@ canvas { display:none !important; }
 <div style="font-size:11px;color:var(--text2);margin-bottom:12px;padding:8px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px"><strong>用語:</strong> <span style="color:#22c55e">BUY_NOW/BUY_SMALL</span>=購入推奨判定 / <span style="color:#eab308">WAIT</span>=条件未達で待機 / <span style="color:#ef4444">AVOID</span>=買い不適格 &nbsp;|&nbsp; <strong>価格到達</strong>=ゾーン価格条件の達成 (実行許可ではない) &nbsp;|&nbsp; <strong>実行可能</strong>=価格+監査+DD全て充足 &nbsp;|&nbsp; <strong>次回検討候補</strong>=監査PASSだが価格/DD等の条件待ち</div>
 <div class="playbook-detail">
 <h2 style="display:flex;align-items:center;gap:10px">週次運用手順<span class="pb-phase" style="background:#eab30833;color:var(--yellow);font-size:13px">DD6 注意</span></h2>
-<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-16 20:21)</div>
+<div style="font-size:11px;color:var(--text2);margin:-8px 0 12px">現在のDD・監査・集中度から自動生成 (2026-03-16 22:31)</div>
 <details open>
 <summary><span class="step-num">1</span>リスク監視を先に処理<span class="playbook-status s-alert">9件</span><input type="checkbox" class="playbook-check" data-step="1"></summary>
 <div class="step-content">
@@ -1555,15 +1556,15 @@ danger_flags時価: <strong>33.7%</strong> / 配当寄与: <strong>34.1%</strong
 </div>
 <h3>価格到達・制約あり — 次アクション</h3>
 <table><thead><tr>
-<th>コード</th><th>銘柄</th><th>到達</th><th>制約</th><th>次条件</th><th>今やること</th>
+<th>コード</th><th>銘柄</th><th>到達</th><th>制約</th><th>次条件</th><th>今やること</th><th class="center">準備度</th>
 </tr></thead><tbody>
-<tr><td><strong>1414</strong></td><td>SHO-BOND Holdings Co.,Ltd.</td><td>② 標準買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td></tr>
-<tr><td><strong>3946</strong></td><td>Tomoku Co., Ltd.</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td></tr>
-<tr><td><strong>4206</strong></td><td>Aica Kogyo Company, Limited</td><td>② 標準買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">業績回復・利回り上昇・監査改善</td><td style="font-size:11px;font-weight:700">監視継続</td></tr>
-<tr><td><strong>7867</strong></td><td>TOMY Company, Ltd.</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td></tr>
-<tr><td><strong>8707</strong></td><td>IwaiCosmo Holdings, Inc.</td><td>② 標準買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">業績回復・利回り上昇・監査改善</td><td style="font-size:11px;font-weight:700">監視継続</td></tr>
-<tr><td><strong>8766</strong></td><td>Tokio Marine Holdings, Inc.</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td></tr>
-<tr><td><strong>9008</strong></td><td>Keio Corporation</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td></tr>
+<tr><td><strong>1414</strong></td><td>SHO-BOND Holdings Co.,Ltd.</td><td>② 標準買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
+<tr><td><strong>8707</strong></td><td>IwaiCosmo Holdings, Inc.</td><td>② 標準買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">業績回復・利回り上昇・監査改善</td><td style="font-size:11px;font-weight:700">監視継続</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
+<tr><td><strong>4206</strong></td><td>Aica Kogyo Company, Limited</td><td>② 標準買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">業績回復・利回り上昇・監査改善</td><td style="font-size:11px;font-weight:700">監視継続</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
+<tr><td><strong>3946</strong></td><td>Tomoku Co., Ltd.</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
+<tr><td><strong>7867</strong></td><td>TOMY Company, Ltd.</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
+<tr><td><strong>9008</strong></td><td>Keio Corporation</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
+<tr><td><strong>8766</strong></td><td>Tokio Marine Holdings, Inc.</td><td>① 打診買い</td><td style="font-size:11px">新規買い: 厳選のみ (DD6警戒)</td><td style="font-size:11px">PER低下または利回り上昇で割安度改善</td><td style="font-size:11px;font-weight:700">スコア改善待ち</td><td class="center"><span style="color:var(--green)">★★★</span></td></tr>
 </tbody></table>
 <div class="section">
 <h3 style="margin-top:0">ポートフォリオ全体: 今やること</h3>
@@ -1574,6 +1575,7 @@ danger_flags時価: <strong>33.7%</strong> / 配当寄与: <strong>34.1%</strong
 <li>danger_flags銘柄の監査頻度を週次に引き上げ</li>
 <li>集中ポジション拡大を控える</li>
 </ul>
+<div style="font-size:11px;color:var(--text2);margin-top:4px;padding:4px 8px;background:var(--bg);border-radius:4px">解除条件: 管理DD 6.8% → 5.9%以下で通常運用</div>
 <div style="margin:6px 0;font-size:13px"><strong style="color:var(--yellow)">DD改善後の検討候補:</strong> 3946(<span style="color:var(--yellow);font-size:11px">価格待ち</span>)、7867(<span style="color:var(--yellow);font-size:11px">価格待ち</span>)<div style="font-size:11px;color:var(--text2);margin-top:2px">監査PASS — DD制約解除後に再評価</div></div>
 <div style="margin:4px 0;font-size:13px"><strong style="color:var(--orange)">監査要確認 (5件):</strong> 1414, 1950, 2768, 3543, 4206</div>
 <div style="margin:4px 0;font-size:13px"><strong style="color:var(--red)">リスク監視 (9件):</strong> 1928, 5161, 5074, 8593, 1950, 2768, 3543, 6209, 8707</div>
